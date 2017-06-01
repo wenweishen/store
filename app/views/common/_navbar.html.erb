@@ -6,11 +6,13 @@
     <% else %>
       <div class="navbar navbar-default navbar-fixed-top show_bgcolor" role="navigation">
     <% end %>
+
         <div class="container">
 
           <div class="navbar-header">
+
             <!--=== 网站 Logo/名称 ===-->
-             <a class="navbar-brand" href="/">个性定制桌游 </a>
+             <a class="navbar-brand" href="/"> 个性化定制桌游 </a>
 
             <!--=== 右側下拉選單（移動端顯示） ===-->
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu-4" aria-expanded="false">
@@ -53,14 +55,14 @@
                   <%= t('language') %>
                   <span class="caret"></span>
                 </a>
+
                 <ul class="dropdown-menu">
+
                   <!-- 語系選項 -->
                   <li><%= link_to "简体中文", :controller => controller_name, :action => action_name, :locale => "zh-CN" %></li>
                   <li><%= link_to "繁體中文", :controller => controller_name, :action => action_name, :locale => "zh-TW" %></li>
                 </ul>
               </li>
-
-
 
               <% if !current_user %>
                 <!-- 訪客註冊 / 登入 -->
@@ -95,6 +97,7 @@
                   </ul>
 
                 </li>
+
               <% end %>
             </ul>
 

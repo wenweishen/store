@@ -6,11 +6,11 @@
       <div class="col-md-12">
         <div id="intro" class="carousel slide" data-ride="carousel">
           <!--===== 輪播按鈕 =====-->
-          <!-- <ol class="carousel-indicators">
+           <!-- <ol class="carousel-indicators">
             <li data-target="#intro" data-slide-to="0" class="active"></li>
             <li data-target="#intro" data-slide-to="1"></li>
             <li data-target="#intro" data-slide-to="2"></li>
-          </ol> -->
+          </ol>  -->
 
           <!--===== 換頁按鈕 =====-->
           <a class="left carousel-control" href="#intro" role="button" data-slide="prev">
@@ -29,6 +29,7 @@
   <!--===== 商品類型 =====-->
   <section class="categories-box">
     <div class="row">
+
       <div class="col-md-4 category-content">
         <%= link_to 'https://j-and-a-select.herokuapp.com/products?group=%E6%97%A5%E5%B8%B8%E6%96%87%E5%85%B7' , class: "category_1" do %>
           <div class="category-box">
@@ -40,6 +41,7 @@
           </div>
         <% end %>
       </div>
+
       <div class="col-md-4 category-content">
         <%= link_to 'https://j-and-a-select.herokuapp.com/products?group=%E7%94%9F%E6%B4%BB%E5%99%A8%E7%89%A9' , class: "category_2" do %>
           <div class="category-box">
@@ -51,6 +53,7 @@
           </div>
         <% end %>
       </div>
+
       <div class="col-md-4 category-content">
         <%= link_to 'https://j-and-a-select.herokuapp.com/products?group=%E5%80%8B%E4%BA%BA%E5%96%AE%E5%93%81' , class: "category_3" do %>
           <div class="category-box">
@@ -62,6 +65,7 @@
           </div>
         <% end %>
       </div>
+
     </div>
   </section>
 
