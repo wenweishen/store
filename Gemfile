@@ -29,17 +29,43 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-gem 'bootstrap-sass'
+
+# ===== 專案使用到的 Gem ===== #
+# 帳號系統
 gem 'devise'
+
+# 前端視覺
+gem 'bootstrap-sass'
 gem 'simple_form'
+# gem 'will_paginate'
+# gem 'will_paginate-bootstrap'
 gem 'font-awesome-rails'
+# gem 'masonry-rails'
+# gem 'social-share-button'
+
+#邮件系统
+gem 'letter_opener', group: :development
+
+# 圖片功能
 gem 'carrierwave'
 gem 'mini_magick'
-gem 'letter_opener', group: :development
+
+# 訂單狀態
 gem 'aasm'
+
+#七牛云
 gem 'carrierwave-qiniu'
 gem 'qiniu-rs'
+
+#管理密码
 gem 'figaro'
+
+#多语言系统
+gem "rails-i18n"
+gem "devise-i18n"
+
+# Intercom 客服系統
+# gem 'intercom-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
