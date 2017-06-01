@@ -31,8 +31,8 @@ body {
 
     /*===== 頁面內容設定 ======*/
   .container-fluid {
-    margin-top: 55px;
-    min-height: 550px;
+    margin-top: 0px;
+    min-height: 0px;
   }
 
     /*===== 換頁按鈕設定 ======*/
@@ -125,6 +125,9 @@ body {
 .navbar.navbar-default {
   background: rgba(0,0,0,0.3);
   color: #000 !important;
+  min-height: 80px;
+  border-style: none;
+
 
   a:hover,
   a:active,
@@ -135,6 +138,8 @@ body {
   &.show_bgcolor {
     background-color: #02061A;
   }
+
+
 
   /*===== Logo ======*/
   .logo-box {

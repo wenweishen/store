@@ -13,11 +13,13 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require bootstrap
 //= require bootstrap/alert
 //= require bootstrap/dropdown
 //= require_tree .
 
 $(window).scroll(function () {
+  /*===== Welcome#index - 首頁導航列變化 =====*/
     if ($(this).scrollTop() > 125) {
         $('#navbar').addClass('show_bgcolor')
     } else {
