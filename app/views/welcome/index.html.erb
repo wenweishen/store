@@ -5,12 +5,14 @@
       <div class="col-md-12">
 
         <div id="intro" class="carousel slide" data-ride="carousel">
+
           <!-- Indicators 轮播按钮 -->
           <ol class="carousel-indicators">
             <li data-target="#intro" data-slide-to="0" class="active"></li>
             <li data-target="#intro" data-slide-to="1"></li>
             <li data-target="#intro" data-slide-to="2"></li>
           </ol>
+
           <!-- Wrapper for slides 轮播内容 -->
           <div class="carousel-inner " role="listbox">
             <div class="item active">
@@ -35,6 +37,27 @@
               </div>
             </div>
           </div>
+
+<!-- 轮播内容-->
+
+<div class="carousel-inner" role="listbox">
+  <% @intros.each_with_index do |intro,index| %>
+    <% if index == 0 %>
+      <div class="item active">
+    <% else %>
+      <div class="item">
+    <% end %>
+      <%= link_to intro.link, target: "_blank" do %>
+        <%= image_tag(intro.image) %>
+        <div class="carousel-caption">
+          <h3><%= intro.title %></h3>
+          <p><%= intro.content %></p>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
           <!-- Left and right controls 轮播控制箭头 -->
           <a class="left carousel-control" href="#intro" role="button" data-slide="prev">
             <span class="fa fa-angle-left" aria-hidden="true"></span>
@@ -50,8 +73,6 @@
       </div>
     </div>
   </section>
-
-
 
   <!--===== 品牌故事 =====-->
   <section class="story-box">
@@ -82,7 +103,9 @@
       </div>
     </div>
   </section>
-  
+
+
+
   <!--===== 商品類型 =====-->
   <section class="categories-box">
     <div class="row">
