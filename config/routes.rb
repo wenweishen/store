@@ -10,6 +10,11 @@ root 'welcome#index'
 #--=== 前台 ===--#
 
 # 商品 #
+resources :products do
+   member do
+     post :add_to_cart
+   end
+end
 
 # 搜索 #
 
@@ -59,23 +64,20 @@ end
       post :return
     end
    end
-  end
 
+   # 品牌 #
 
- # 品牌 #
+   # 類型 #
 
- # 類型 #
+   # 分類 #
 
- # 分類 #
+   # 商品 #
+   resources :products
 
- # 商品 #
- resources :products do
-    member do
-      post :add_to_cart
-    end
+   # 首頁 Covers #
+
  end
 
- # 首頁 Covers #
 
 
 

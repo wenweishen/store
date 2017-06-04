@@ -136,7 +136,7 @@ body {
   }
 
   &.show_bgcolor {
-    background-color: #02061A;
+    background-color: #7BA23F;
   }
 
 
@@ -215,7 +215,8 @@ body {
 .footer{
   text-align: center;
   min-height: 200px;
-  background-color: #02061A;
+  background-color: #FFA000;
+  // background-color: #02061A;//
   padding: 15px 0;
   color: #fff;
   font-size: 14px;
@@ -503,9 +504,6 @@ body {
   background: image_url("start.jpg") no-repeat scroll top center/ cover;
 }
 
-
-
-
 /*===== Users 用戶中心 =====*/
 .user_setup{
   height: 750px;
@@ -619,4 +617,14 @@ body {
       color: #fff;
     }
   }
+}
+
+//2017.06.04
+
+// 通用的css代码  购物车
+
+.col-centered {
+  float: none;
+  margin: 0 auto; //置中
+  margin-top: 50px;
 }

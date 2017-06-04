@@ -1,11 +1,25 @@
+<div style="margin-top: 0px;">
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+  <div class="container">
 <div class="row">
-  <div class="col-md-12">
+
+
+  <div class="col-md-9 col-centered">
+
     <%= link_to("清空购物车", clean_carts_path ,
                   method: :delete , class: "pull-right",
                   style: "text-decoration: underline;",
                   data: { confirm: "你确定要清空整个购物车吗？"} )%>
     <h2> 购物车 </h2>
+
     <table class="table table-bordered">
+
       <thead>
         <tr>
           <th colspan="2">商品资讯</th>
@@ -14,6 +28,8 @@
           <th>操作选项 </th>
         </tr>
       </thead>
+
+
       <tbody>
         <% current_cart.cart_items.each do |cart_item| %>
           <tr>
@@ -46,8 +62,11 @@
           </tr>
         <% end %>
       </tbody>
+
     </table>
+
     <br>
+
     <div class="total clearfix">
       <span class="pull-right">
         <span>
@@ -55,9 +74,18 @@
         </span>
       </span>
     </div>
+
     <hr>
+
     <div class="checkout clearfix">
       <%= link_to("确认结账", checkout_carts_path, method: :post, class: "btn btn-lg btn-danger pull-right") %>
     </div>
+
+
   </div>
+
+
+
+</div>
+</div>
 </div>
