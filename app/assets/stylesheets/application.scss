@@ -20,10 +20,11 @@
 
 /*===== 網站通用設置 ======*/
 body {
-  overflow-x: hidden; //裁切內容，超出視窗不顯示
-  letter-spacing: 1px;
-  font-size: 14px;
-  position: relative;
+  width:100%;
+  overflow-x: hidden; //修正welcome页面右边有空白的问题
+  position:relative;
+  padding-bottom:100px;
+  min-height:100%;
 
   a {
     text-decoration:none !important;
@@ -31,8 +32,8 @@ body {
 
     /*===== 頁面內容設定 ======*/
   .container-fluid {
-    margin-top: 0px;
-    min-height: 0px;
+    margin-bottom: 150px;  
+
   }
 
     /*===== 換頁按鈕設定 ======*/
@@ -213,13 +214,16 @@ body {
 
 /*===== Footer 页脚 ======*/
 .footer{
+  width: 100%;
   text-align: center;
-  min-height: 200px;
-  background-color: #FFA000;
-  // background-color: #02061A;//
+  background-color: #02061A;
   padding: 15px 0;
   color: #fff;
   font-size: 14px;
+
+  position: absolute;
+  bottom: 0;
+  min-height: 100px;
 
   h4 {
     font-size: 16px;
@@ -262,7 +266,7 @@ body {
   }
 
   .footer-box {
-    text-align: left !important;
+    text-align: center !important;
     margin-top: 15px;
   }
 
@@ -627,4 +631,11 @@ body {
   float: none;
   margin: 0 auto; //置中
   margin-top: 50px;
+}
+
+
+//footer固定在页面底部
+
+html {
+  height:100%;
 }
