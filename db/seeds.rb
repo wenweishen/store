@@ -46,36 +46,48 @@
   #产品资料
   Product.create!(
 #  brand_id: 1,
-  title: "HAY- J104单椅",
-  description: "尺寸：宽57 x深47 x高73 /高高44.5厘米",
-  price: 2020,
+  title: "权力的游戏-国王之手",
+  description: "权力的游戏-国王之手，规则简单，画风犀利，轻度策略",
+  price: 300,
 #  stock: 5,
   quantity: 5,
-  image: open("https://ws4.sinaimg.cn/large/006tKfTcgy1ffug7u3qq1j30b40gomxq.jpg"),
+  image: open("https://ws4.sinaimg.cn/large/006tNbRwgy1fgashd7q13j309q0bf7ai.jpg"),
 #  category_id: 1,
 #  can_sell: true
   )
 
 Product.create!(
 #  brand_id: 1,
-  title: "HAY- Slit圆型几何边几",
-  description: "尺寸：直径45 x高35.5厘米",
-  price: 1795,
+  title: "Twlight Struggle（冷战热斗）",
+  description: "以美苏冷战为背景，玩家模拟美苏其中的一方，行走在核战危机的边缘，在全球范围内拓展自己的影响力",
+  price: 300,
 #  stock: 5,
   quantity: 5,
-  image: open("https://ws1.sinaimg.cn/large/006tKfTcgy1ffug88zz8qj30m80eu3z3.jpg"),
+  image: open("https://ws2.sinaimg.cn/large/006tNbRwgy1fgasnhlmb2j30m80m8gzm.jpg"),
 #  category_id: 2,
 #  can_sell: true
   )
 
 Product.create!(
 #  brand_id: 1,
-  title: "HAY- Revolver旋转吧台椅",
-  description: "高型：直径34×高76厘米",
-  price: 2020,
+  title: "Wonders:Duel(七大奇迹:对决)",
+  description: "文明背景的建设类游戏，曾经一度名列BGG游戏榜单前十",
+  price: 300,
 #  stock: 5,
   quantity: 5,
-  image: open("https://ws4.sinaimg.cn/large/006tKfTcgy1ffug8g1srej30m80et0tl.jpg"),
+  image: open("https://ws4.sinaimg.cn/large/006tNbRwgy1fgasqvoz9kj30k00jzqpp.jpg"),
 #  category_id: 3,
 #  can_sell: true
   )
+
+  Product.create!(
+  #  brand_id: 1,
+    title: "Babel(通天塔)",
+    description: "最佳分手游戏",
+    price: 300,
+  #  stock: 5,
+    quantity: 5,
+    image: open("https://ws2.sinaimg.cn/large/006tNbRwgy1fgat3ncl2lj30dv0dwna0.jpg"),
+  #  category_id: 3,
+  #  can_sell: true
+    )
