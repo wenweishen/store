@@ -18,7 +18,7 @@
     u = User.new
 #    u.title = '測試管理員'
     u.email = 'admin@rails.com'
-    u.nicktitle = '測試管理員'
+    u.nickname = '測試管理員'
     u.password = '111111'
     u.password_confirmation = '111111'
     u.is_admin = true
@@ -33,7 +33,7 @@
     u = User.new
 #    u.title = '測試管理員'
     u.email = 'user@rails.com'
-    u.nicktitle = '測試管理員'
+    u.nickname = '測試管理員'
     u.password = '111111'
     u.password_confirmation = '111111'
     u.is_admin = false
