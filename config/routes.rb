@@ -13,8 +13,9 @@ root 'welcome#index'
 resources :products do
    member do
      post :add_to_cart
-     post :setup_currency
      post :add_to_wish_list
+     post :remove_from_wish_list
+     post :setup_currency
    end
 end
 

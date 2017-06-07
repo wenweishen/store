@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+
    def index
      # 商品类型/品牌
      #@products = Product.all
@@ -34,12 +35,7 @@ class ProductsController < ApplicationController
      else
        @products = Product.published.recent.paginate(:page => params[:page], :per_page => 12)
      end
-
    end
-
-
-
-
 
   def show
     @product = Product.find(params[:id])
@@ -70,8 +66,28 @@ class ProductsController < ApplicationController
        else
          flash[:warning] = "你的购物车内已有此物品"
        end
-    redirect_to :back
+       redirect_to :back
   end
+
+  # 將该商品加入愿望清单
+def add_to_wish_list
+  @product = Product.find(params[:id])
+  if !current_user.is_wish_list_owner_of?(@product)
+    current_user.add_to_wish_list!(@product)
+  end
+
+  redirect_to :back
+end
+
+# 从愿望清单上删除该商品
+def remove_from_wish_list
+  @product = Product.find(params[:id])
+  if current_user.is_wish_list_owner_of?(@product)
+    current_user.remove_from_wish_list!(@product)
+  end
+
+  redirect_to :back
+end
 
 
 end
