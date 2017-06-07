@@ -2,7 +2,7 @@
   <div class="container">
 
   <!--=== 商品類型 Banner ===-->
-  <% if params[:id].present? %>
+  <!-- <% if params[:id].present? %>
     <%= image_tag(@product.category.category_group.image, class: "background-image") %>
   <% elsif params[:category].present? %>
     <%= image_tag(@category.category_group.image, class: "background-image") %>
@@ -10,9 +10,9 @@
     <%= image_tag(@group.image, class: "background-image") %>
   <% else %>
     <%= image_tag("product_bg.jpg", class: "background-image") %>
-  <% end %>
+  <% end %> -->
 
-  <!--=== 商品類型 & 品牌選單 ===-->
+  <!--=== 商品类型 & 品牌选单 ===-->
   <%= render "products/menu" %>
 
   <% if @products.length > 0 %>
@@ -21,9 +21,9 @@
       <% @products.each_with_index do |product, index| %>
         <div class='col-xs-12 col-sm-4 col-md-3 product-content'>
           <%= link_to product_path(product) do %>
-            <!-- 商品圖片 -->
+            <!-- 商品图片 -->
             <% if product.product_images.present? %>
-              <!-- 顯示第一張圖片 -->
+              <!-- 显示第一张图片 -->
               <% if product.is_chosen %>
                 <div class="chosen-box"><%= t('product-chosen') %></div>
               <% end %>
@@ -32,14 +32,15 @@
               <%= image_tag('http://placehold.it/200x200&text=No Pic', class: 'thumbnail') %>
             <% end %>
           <% end %>
+
           <div class="product-info">
             <p><%= link_to(product.title , product_path(product)) %></p>
             <p><%= render_product_price(product) %></p>
           </div>
+
         </div>
       <% end %>
     </div>
-
   <% else %>
     <div class="product-content">
       <h2><%= (t('no-product-data')) %></h2>
@@ -49,6 +50,7 @@
     <div class="page-box">
       <%= will_paginate @products, renderer: BootstrapPagination::Rails, :previous_label => t('previous-label'), :next_label => t('next-label') %>
     </div>
+
 
   </div>
 </div>

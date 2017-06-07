@@ -55,6 +55,15 @@ end
 #--=== 管理員专区 ===--#
  namespace :admin do
 
+   # 商品 #
+   resources :products do
+     member do
+       post :publish
+       post :hide
+       post :chosen
+     end
+   end
+
    # 訂單管理 #
    resources :orders do
     member do
@@ -71,8 +80,7 @@ end
 
    # 分類 #
 
-   # 商品 #
-   resources :products
+
 
    # 首頁 Covers #
 

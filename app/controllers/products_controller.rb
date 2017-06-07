@@ -43,6 +43,22 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    @product_images = @product.product_images.all
+    @orderSum = OrderItem.where("product_id" => @product.id).sum(:quantity)
+    @product_stock = @product.quantity - @orderSum
+
+    # 隨機推薦 3 項商品
+    @suggests = Product.published.random3
+
+    # 類型 / 品牌 / 幣值
+    @category_groups = CategoryGroup.published
+    @brands = Brand.published
+    @currencies = Currency.all
+
+    # set_page_title       @product.title
+    # set_page_description @product.description
+    # set_page_keywords    @product.title
+    # set_page_image       @product_images.first.image.main.url
   end
 
   # 加入购物车

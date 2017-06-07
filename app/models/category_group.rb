@@ -1,14 +1,14 @@
 class CategoryGroup < ApplicationRecord
-  # 新增/修改欄位限制與提示 #
-  validates :name, presence: true
+  # 新增/修改栏位限制与提示 #
+  validates :title, presence: true
 
-  # 關聯 #
+  # 关联 #
   has_many :categories
 
-  #檔案上傳 #
+  #档案上传 #
   mount_uploader :image, GroupUploader
 
-  # 發佈 / 隱藏 #
+  # 发布 / 隐藏 #
   def publish!
     self.is_hidden = false
     self.save
@@ -19,7 +19,7 @@ class CategoryGroup < ApplicationRecord
     self.save
   end
 
-  # 上傳類型 Logo 圖 #
+  # 长传类型 Logo 图 #
   mount_uploader :logo, ImageUploader
 
   # Scope #

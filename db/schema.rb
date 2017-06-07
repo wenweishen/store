@@ -10,10 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170607025429) do
+ActiveRecord::Schema.define(version: 20170607104213) do
 
   create_table "brands", force: :cascade do |t|
-    t.string   "name"
+    t.string   "title"
     t.text     "description"
     t.string   "logo"
     t.boolean  "is_hidden",   default: false
@@ -34,11 +34,27 @@ ActiveRecord::Schema.define(version: 20170607025429) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "categories", force: :cascade do |t|
+    t.string   "title"
+    t.integer  "category_group_id"
+    t.boolean  "is_hidden",         default: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
+  end
+
   create_table "category_groups", force: :cascade do |t|
-    t.string   "name"
+    t.string   "title"
     t.boolean  "is_hidden",  default: false
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
+  end
+
+  create_table "currencies", force: :cascade do |t|
+    t.string   "title"
+    t.string   "symbol"
+    t.float    "rate"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "intros", force: :cascade do |t|
@@ -49,6 +65,17 @@ ActiveRecord::Schema.define(version: 20170607025429) do
     t.boolean  "is_hidden",  default: false
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
+  end
+
+  create_table "order_items", force: :cascade do |t|
+    t.integer  "order_id"
+    t.string   "product_title"
+    t.integer  "product_price"
+    t.integer  "quantity"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "product_id"
+    t.integer  "brand_id"
   end
 
   create_table "orders", force: :cascade do |t|
@@ -92,8 +119,9 @@ ActiveRecord::Schema.define(version: 20170607025429) do
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
     t.string   "image"
-    t.boolean  "is_admin",    default: false
     t.boolean  "is_hidden",   default: false
+    t.integer  "category_id"
+    t.integer  "brand_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -117,7 +145,6 @@ ActiveRecord::Schema.define(version: 20170607025429) do
     t.date     "birthday"
     t.string   "gender"
     t.string   "avater"
-    t.boolean  "is_hidden",              default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

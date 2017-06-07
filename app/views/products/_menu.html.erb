@@ -12,14 +12,14 @@
   <% @category_groups.each do |category_group| %>
     <div class='dropdown btn-group clearfix'>
       <button class='btn dropdown-toggle' type='button' data-toggle='dropdown'>
-        <%= category_group.name %> <i class="fa fa-angle-down"></i>
+        <%= category_group.title %> <i class="fa fa-angle-down"></i>
       </button>
 
       <!-- 選項：列出該類型所有分類 -->
       <ul class='dropdown-menu'>
         <% category_group.categories.each do |category| %>
           <li>
-            <%= link_to(category.name, products_path(:category => category.name)) %>
+            <%= link_to(category.title, products_path(:category => category.title)) %>
           </li>
         <% end %>
       </ul>
@@ -36,7 +36,7 @@
     <ul class='dropdown-menu'>
       <% @brands.each do|brand| %>
         <li>
-          <%= link_to(brand.name, products_path(:brand => brand.name)) %>
+          <%= link_to(brand.title, products_path(:brand => brand.title)) %>
         </li>
       <% end %>
     </ul>
