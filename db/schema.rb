@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170603050322) do
+ActiveRecord::Schema.define(version: 20170607025429) do
+
+  create_table "brands", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "logo"
+    t.boolean  "is_hidden",   default: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+  end
 
   create_table "cart_items", force: :cascade do |t|
     t.integer  "cart_id"
@@ -23,6 +32,13 @@ ActiveRecord::Schema.define(version: 20170603050322) do
   create_table "carts", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "category_groups", force: :cascade do |t|
+    t.string   "name"
+    t.boolean  "is_hidden",  default: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   create_table "intros", force: :cascade do |t|
@@ -51,6 +67,14 @@ ActiveRecord::Schema.define(version: 20170603050322) do
     t.index ["aasm_state"], name: "index_orders_on_aasm_state"
   end
 
+  create_table "product_images", force: :cascade do |t|
+    t.integer  "product_id"
+    t.string   "image"
+    t.boolean  "main_image", default: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
+
   create_table "product_lists", force: :cascade do |t|
     t.integer  "order_id"
     t.string   "product_name"
@@ -65,9 +89,11 @@ ActiveRecord::Schema.define(version: 20170603050322) do
     t.text     "description"
     t.integer  "quantity"
     t.integer  "price"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
     t.string   "image"
+    t.boolean  "is_admin",    default: false
+    t.boolean  "is_hidden",   default: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -91,6 +117,7 @@ ActiveRecord::Schema.define(version: 20170603050322) do
     t.date     "birthday"
     t.string   "gender"
     t.string   "avater"
+    t.boolean  "is_hidden",              default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

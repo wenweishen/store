@@ -37,8 +37,8 @@ gem 'devise'
 # 前端視覺
 gem 'bootstrap-sass' #bootstrap模板
 gem 'simple_form'
-# gem 'will_paginate'
-# gem 'will_paginate-bootstrap'
+gem 'will_paginate'
+gem 'will_paginate-bootstrap'
 gem 'font-awesome-rails' #font-awesome-rails图标
 # gem 'masonry-rails'
 # gem 'social-share-button'
