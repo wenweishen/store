@@ -13,6 +13,8 @@ root 'welcome#index'
 resources :products do
    member do
      post :add_to_cart
+     post :setup_currency
+     post :add_to_wish_list
    end
 end
 

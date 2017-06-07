@@ -52,13 +52,13 @@
     <% end %>
 
     <% if params[:id].present? %>
-    / <a href="../products?group=<%= @product.category.category_group.name %>"><%= @product.category.category_group.name %></a> / <a href="../products?category=<%= @product.category.name %>"><%= @product.category.name %></a> / <a href="<%= @product.id %>"><%= @product.name %></a>
+    / <a href="../products?group=<%= @product.category.category_group.title %>"><%= @product.category.category_group.title %></a> / <a href="../products?category=<%= @product.category.title %>"><%= @product.category.title %></a> / <a href="<%= @product.id %>"><%= @product.title %></a>
     <% elsif params[:category].present? %>
-    / <a href="products?group=<%= @category.category_group.name %>"><%= @category.category_group.name %></a> / <a href="products?category=<%= @category.name %>"><%= @category.name %></a>
+    / <a href="products?group=<%= @category.category_group.title %>"><%= @category.category_group.title %></a> / <a href="products?category=<%= @category.title %>"><%= @category.title %></a>
     <% elsif params[:group].present? %>
-    / <a href="products?group=<%= @group.name %>"><%= @group.name %></a>
+    / <a href="products?group=<%= @group.title %>"><%= @group.title %></a>
     <% elsif params[:brand].present? %>
-    / <a href="products?brand=<%= @brand.name %>"><%= @brand.name %></a>
+    / <a href="products?brand=<%= @brand.title %>"><%= @brand.title %></a>
     <% elsif params[:chosen].present? %>
     / <a href="products?chosen=y"><%= t('f-product-chosen') %></a>
     <% end %>
