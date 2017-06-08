@@ -1,106 +1,103 @@
 <div class="welcome-box">
-    <!--===== 廣告輪播 =====-->
-    <section class="intro-box">
-      <div class="row">
-        <div class="col-md-12">
-          <div id="intro" class="carousel slide" data-ride="carousel">
-            <!--===== 輪播按鈕 =====-->
-            <!-- <ol class="carousel-indicators">
+  <!--===== 廣告輪播 =====-->
+  <section class="intro-box">
+    <div class="row">
+      <div class="col-md-12">
+        <div id="intro" class="carousel slide" data-ride="carousel">
+          <!--===== 輪播按鈕 =====-->
+          <!-- <ol class="carousel-indicators">
           <li data-target="#intro" data-slide-to="0" class="active"></li>
           <li data-target="#intro" data-slide-to="1"></li>
           <li data-target="#intro" data-slide-to="2"></li>
         </ol> -->
-            <!--===== 輪播內容 =====-->
-            <div class="carousel-inner" role="listbox">
-              <% @intros.each_with_index do |intro,index| %>
-                <% if index == 0 %>
-                  <div class="item active">
-                  <% else %>
-                    <div class="item">
-                    <% end %>
-                    <%= link_to intro.link, target: "_blank" do %>
-                      <%= image_tag(intro.image) %>
-                      <div class="carousel-caption">
-                        <h3><%= intro.title %></h3>
-                        <p><%= intro.content %></p>
-                      </div>
-                    <% end %>
-                  </div>
-                <% end %>
-              </div>
-              <!--===== 換頁按鈕 =====-->
-              <a class="left carousel-control" href="#intro" role="button" data-slide="prev">
-                <span class="fa fa-angle-left" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-              </a>
-              <a class="right carousel-control" href="#intro" role="button" data-slide="next">
-                <span class="fa fa-angle-right" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-              </a>
+          <!--===== 輪播內容 =====-->
+          <div class="carousel-inner" role="listbox">
+            <% @intros.each_with_index do |intro,index| %>
+              <% if index == 0 %>
+                <div class="item active">
+                <% else %>
+                  <div class="item">
+                  <% end %>
+                  <%= link_to intro.link, target: "_blank" do %>
+                    <%= image_tag(intro.image) %>
+                    <div class="carousel-caption">
+                      <h3><%= intro.title %></h3>
+                      <p><%= intro.content %></p>
+                    </div>
+                  <% end %>
+                </div>
+              <% end %>
             </div>
+            <!--===== 換頁按鈕 =====-->
+            <a class="left carousel-control" href="#intro" role="button" data-slide="prev">
+              <span class="fa fa-angle-left" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#intro" role="button" data-slide="next">
+              <span class="fa fa-angle-right" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
           </div>
         </div>
       </div>
-    </section>
-
-    <hr />
-
-    <!-- 中间区域介绍内容 -->
-    <section class="slogan-box">
+    </div>
+  </section>
+  <hr />
+  <!-- 中间区域介绍内容 -->
+  <section class="slogan-box">
+    <div class="landing-page-mid">
+      <div class="container">
         <div class="row">
           <div class="col-md-12">
-            <h1 class="">我们重新定义 高质量生活</h1>
+            <h1 class="tagline text-center"><%= t('slogan') %></h1>
             <div class="short-line"></div>
             <p class="col-md-6 col-md-offset-3 text-center tagp">
-              我们重新定义高质量生活，一学即刻上手改变。
-              <br>
-              不仅仅是课程，还是持续行动的社群，与千名会员一起感受蜕变，告别低质量生活。
-              在这里，人人都是生活家。
+              <%= t('slogan-plus') %>
             </p>
           </div>
-      </div>
-    </section>
-
-    <!--===== 商品类型 =====-->
-    <section class="categories-box">
-      <div class="row">
-        <div class="col-md-4 category-content">
-          <%= link_to 'heroku上对应的网址链接' , class: "category_1" do %>
-            <div class="category-box">
-              <%= image_tag("category_1.jpg") %>
-            </div>
-            <div>
-              <h3><%= t('th-first') %></h3>
-              <p><%= t('slogan-first') %></p>
-            </div>
-          <% end %>
-        </div>
-        <div class="col-md-4 category-content">
-          <%= link_to 'heroku上对应的网址链接' , class: "category_2" do %>
-            <div class="category-box">
-              <%= image_tag("category_2.jpg") %>
-            </div>
-            <div>
-              <h3><%= t('th-second') %></h3>
-              <p><%= t('slogan-second') %></p>
-            </div>
-          <% end %>
-        </div>
-        <div class="col-md-4 category-content">
-          <%= link_to 'heroku上对应的网址链接' , class: "category_3" do %>
-            <div class="category-box">
-              <%= image_tag("category_3.jpg") %>
-            </div>
-            <div>
-              <h3><%= t('th-third') %></h3>
-              <p><%= t('slogan-third') %></p>
-            </div>
-          <% end %>
         </div>
       </div>
-    </section>
-
-    <!--===== 文章按钮区域 =====-->
+    </div>
+  </section>
+  <!--===== 商品类型 =====-->
+  <section class="categories-box">
+    <div class="row">
+      <div class="col-md-4 category-content">
+        <%= link_to 'heroku上对应的网址链接' , class: "category_1" do %>
+          <div class="category-box">
+            <%= image_tag("category_1.jpg") %>
+          </div>
+          <div>
+            <h3><%= t('th-first') %></h3>
+            <p><%= t('explain-first') %></p>
+          </div>
+        <% end %>
+      </div>
+      <div class="col-md-4 category-content">
+        <%= link_to 'heroku上对应的网址链接' , class: "category_2" do %>
+          <div class="category-box">
+            <%= image_tag("category_2.jpg") %>
+          </div>
+          <div>
+            <h3><%= t('th-second') %></h3>
+            <p><%= t('explain-second') %></p>
+          </div>
+        <% end %>
+      </div>
+      <div class="col-md-4 category-content">
+        <%= link_to 'heroku上对应的网址链接' , class: "category_3" do %>
+          <div class="category-box">
+            <%= image_tag("category_3.jpg") %>
+          </div>
+          <div>
+            <h3><%= t('th-third') %></h3>
+            <p><%= t('explain-third') %></p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </section>
+  <!--===== 文章按钮区域 =====-->
   <section class="article-box">
     <div class="container">
       <div class="row">
@@ -142,9 +139,8 @@
       </div>
     </div>
   </section>
-    <!--===== 立即購買 =====-->
+  <!--===== 立即購買 =====-->
   <section class="push-box">
-      <%= link_to(t('btn-buy-now'), products_path, class:'btn btn-push' ) %>
+    <%= link_to(t('btn-buy-now'), products_path, class:'btn btn-push' ) %>
   </section>
-
 </div>

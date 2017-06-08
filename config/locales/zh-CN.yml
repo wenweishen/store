@@ -43,15 +43,19 @@ zh-CN:
 
 #--=== 首页 ===--#
 
+  # slogan介绍 #
+  slogan: 想一个slogan
+  slogan-plus: 说明
+
   # 商品分类 #
-  th-first: 抽象策略篇
-  slogan-first: ？？
+  th-first: 欢乐聚会游戏
+  explain-first: 一般规则都比较简单，适合人多图乐子的场合。各类身份猜测和嘴炮类的游戏，比如狼人杀、抵抗组织大抵都属于这类。
 
-  th-second: 文明古国篇
-  slogan-second: ？？
+  th-second: 主题扮演游戏
+  explain-second: 通常也被称作美式桌游，注重游戏背景的代入感，游戏内容通常带有强烈的主题色彩，一般都带有角色扮演的性质，内容具象，新手玩家容易被吸引。美式游戏历史比较悠久，早期的代表有D&D龙、地下城等。
 
-  th-third: 两人游戏篇
-  slogan-third: ？？
+  th-third: 德式策略游戏
+  explain-third: 这类桌游通常都需要玩家根据场上的形势和对手的行动，选择对自己最有利的游戏策略。背景题材广泛，复杂难易程度跨度很大。众多资深桌游爱好者对其乐此不疲。
 
   # 推荐商品 #
   th-featured-products: 精选商品
@@ -61,6 +65,7 @@ zh-CN:
 
   # 立即购买 #
   btn-buy-now: 立即选购
+
 
 #--=== Footer ===--#
 
