@@ -120,175 +120,27 @@ body {
   }
 }
 
-
-
 /*===== Navbar 导览列 ======*/
-.navbar.navbar-default {
-  background: rgba(0,0,0,0.3);
-  color: #000 !important;
-  min-height: 80px;
-  border-style: none;
+  //footer样式设置
 
-
-  a:hover,
-  a:active,
-  a:focus {
-    color: #eb5424 !important;
-  }
-
-  &.show_bgcolor {
-    background-color: #7BA23F;
-  }
-
-
-
-  /*===== Logo ======*/
-  .logo-box {
-    margin-right: 15px;
-    font-family: 'Oswald', sans-serif; /* Google字型 */
-    font-size: 20px;
-
-    img {
-      display: inline-block;
-      margin-top: -6px;
-      margin-right: 8px;
-      margin-left: 30px;
-      width: 30px;
-      height: 30px;
-      border: 2px solid #ffffff; /* Logo 外框 */
-      border-radius: 25px; /* Logo 切成圓形 */
-    }
-  }
-
-  /*===== Dropdown ======*/
-  .dropdown-menu{
-    background-color: #fff;
-    min-width: 175px;
-    // box-shadow: 0 5px 10px #aaa;
-
-    a {
-      color: #000;
-      padding: 8px 17px;
-    }
-
-    a:hover {
-      background-color: #f0f0f0;
-      color: #eb5424 !important;
-    }
-  }
-
-  /* 下拉選單三角箭頭 */
-  .dropdown-menu:before {
-    content: "";
-    border-bottom: 10px solid #fff;
-    border-right: 10px solid transparent;
-    border-left: 10px solid transparent;
+  .footer-style {
+    background-color: #f5f5f5;
     position: absolute;
-    top: -10px;
-    right: 16px;
-    z-index: 10;
+    bottom: 0;
+    min-height: 100px;
+    width:100%;
+  }
+  .footer-style h5 {
+    margin-top: 2em;
+    font-size: 1.6em;
+  }
+  .footer-style-p {
+    text-align: justify;
+    line-height: 2em;
+    letter-spacing: 0.1em;
   }
 
-  /* 搜索欄 */
-  .search-box {
-    margin-top: 7.5px;
-    input {
-      height: 35px;
-    }
 
-    input:focus {
-      border: 2px solid #ccc;
-    }
-
-    button {
-      background-color: #fff;
-      border: 1.5px solid #fff;
-      padding: 5px 10px 5px 10px;
-      height: 35px;
-      color: #333;
-    }
-  }
-}
-
-
-
-/*===== Footer 页脚 ======*/
-.footer{
-  width: 100%;
-  text-align: center;
-  background-color: #02061A;
-  padding: 15px 0;
-  color: #fff;
-  font-size: 14px;
-
-  position: absolute;
-  bottom: 0;
-  min-height: 100px;
-
-  h4 {
-    font-size: 16px;
-    margin-top: 25px;
-    margin-bottom: 15px;
-  }
-
-  li {
-    margin-top: 5px;
-  }
-
-  a {
-    text-decoration:none;
-    color: #ccc;
-  }
-
-  a:hover,
-  a:active,
-  a:focus {
-    color: #eb5424;
-  }
-
-  img {
-    display: inline-block;
-    margin-top: -6px;
-    margin-right: 8px;
-    width: 30px;
-    height: 30px;
-    border: 2px solid #ffffff; /* Logo 外框 */
-    border-radius: 25px; /* Logo 切成圓形 */
-  }
-
-  p {
-    a {
-      color: #ddd;
-    }
-    a:hover {
-      color: #eb5424;
-    }
-  }
-
-  .footer-box {
-    text-align: center !important;
-    margin-top: 15px;
-  }
-
-  .footer-content {
-    font-size: 16px;
-    font-family: Raleway;
-    color: #ddd;
-    letter-spacing: 1px;
-    margin-top: 10px;
-    font-weight: 200;
-
-    img {
-      width: 25px;
-      margin-left: 7.5px;
-      margin-right: -0.1px;
-    }
-
-    img:hover {
-      opacity: 1;
-    }
-  }
-}
 
 
 /*===== 首页通用设置 =====*/

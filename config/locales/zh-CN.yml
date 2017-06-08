@@ -1,6 +1,6 @@
 zh-CN:
-#--=== J&A SELECT ===--#
-  j-and-a-select: 个性桌游定制
+#--=== web-name ===--#
+  web-name: 个性定制桌游
 
 #--=== Devise 相关 ===--#
   devise:
@@ -116,7 +116,7 @@ zh-CN:
   btn-add-to-cart: 加入购物车
   wish-list-add: 加入收藏
   nav-currency: 切换币值
-  wish-list-remove: 已收藏至愿望清单
+  wish-list-remove: 已收藏
   btn-add-to-cart-none: 商品缺货
   best-matches: J & A SELECT 推荐商品
 
@@ -185,7 +185,7 @@ zh-CN:
   login: 登入
   logout: 登出
   greeting: 您好，
-  wish-list: 愿望清单
+  wish-list: 收藏
   cart: 购物车
   language: 语系
   product-access: 精选商品
@@ -227,7 +227,7 @@ zh-CN:
   female: 女
 
   # 愿望清单 #
-  account-wish-list-index: 愿望清单
+  account-wish-list-index: 收藏清单
   btn-move-to-cart: 移动至购物车
   wish-no-data: 您尚未收藏任何商品。
   wish-suggest: J & A SELECT 诚挚向您推荐：

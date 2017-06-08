@@ -17,9 +17,13 @@ resources :products do
      post :remove_from_wish_list
      post :setup_currency
    end
-end
 
-# 搜索 #
+
+  # 搜索 #
+  collection do
+    get :search
+  end
+end
 
 # 购物车 #
 resources :carts do
@@ -48,9 +52,13 @@ namespace :account do
  resources :users
  # 订单历程 #
  resources :orders
-
  # 收藏清单 #
-
+ resources :products do
+   member do
+     post :add_to_cart
+     post :remove_from_wish_list
+   end
+ end
 end
 
 
