@@ -17,14 +17,24 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+@import url('https://fonts.googleapis.com/css?family=Oswald');
 
 /*===== 網站通用設置 ======*/
+
+html {
+  height: 100%; // footer固定底部
+}
+
 body {
-  width:100%;
   overflow-x: hidden; //修正welcome页面右边有空白的问题
-  position:relative;
-  padding-bottom:100px;
-  min-height:100%;
+  min-height: 100%; // footer固定底部
+  display: flex; // footer固定底部                                     // footer固定底部
+  flex-direction: column; // footer固定底部                            // footer固定底部
+  width:100%;
+
+  .content {
+    flex: 1;          // footer固定底部                                    // footer固定底部
+  }
 
   a {
     text-decoration:none !important;
@@ -32,8 +42,8 @@ body {
 
     /*===== 頁面內容設定 ======*/
   .container-fluid {
-    margin-bottom: 150px;
-
+    margin-top: 55px;
+    min-height: 550px;
   }
 
     /*===== 換頁按鈕設定 ======*/
@@ -121,14 +131,77 @@ body {
 }
 
 /*===== Navbar 导览列 ======*/
-  //footer样式设置
 
+// navbar设置
+.navbar-style {
+  background: #f5f5f5;
+  border-color: transparent;                          //边框颜色设置为 透明
+}
+.navbar-brand {
+  letter-spacing: 0.1em;                              //拉开一点点字间距
+  font-weight:lighter;                                   //字体粗细比默认样式缩小100磅值，让logo显得精致高级
+}
+.li-style {
+  color: #666;                                        // 修改全站的 字体主色
+  font-size: 0.8em;
+  a {                                                 // 所有a标签统一样式
+    color: #666;                                      // 链接反转的样式
+    transition: 0.5s;                                 // 鼠标移开时 0.5秒渐变
+  }
+  a:hover {
+    color: #7f8c8d;
+    transition: 0.5s;                                 // 鼠标指向时 0.5面渐变
+    text-decoration: none;                            // 移除下划线
+  }
+}
+
+// 搜索栏设置
+ #custom-search-input{
+   padding: 1px;
+   border: solid 1px #E4E4E4;
+   border-radius: 6px;
+   background-color: #fff;
+ }
+
+ #custom-search-input input{
+     border: 0;
+     box-shadow: none;
+ }
+
+ #custom-search-input button{
+     margin: 2px 0;
+     background: none;
+     box-shadow: none;
+     border: 0;
+     color: #666666;
+     padding: 0 8px 0 10px;
+     border-left: solid 1px #ccc;
+ }
+
+ #custom-search-input button:hover{
+     border: 0;
+     box-shadow: none;
+     border-left: solid 1px #ccc;
+ }
+
+ #custom-search-input .glyphicon-search{
+     font-size: 15px;
+ }
+
+
+
+
+
+
+
+
+
+  /*===== Footer 页脚 ======*/
   .footer-style {
     background-color: #f5f5f5;
-    position: absolute;
     bottom: 0;
     min-height: 100px;
-    width:100%;
+    width: 100%;
   }
   .footer-style h5 {
     margin-top: 2em;
@@ -139,8 +212,6 @@ body {
     line-height: 2em;
     letter-spacing: 0.1em;
   }
-
-
 
 
 /*===== 首页通用设置 =====*/
@@ -219,7 +290,48 @@ body {
   }
 }
 
+
+
+
 /*===== Intro 首页-网站介绍 =====*/
+.intro-box {
+  min-height: 500px;
+
+  /*===== 轮播内容 =====*/
+  .item {
+    h3 {
+      color: #fff;
+      font-size: 50px;
+      font-weight: 700;
+      letter-spacing: 5px;
+      margin-top: -35%;
+      text-shadow: 1px 1px 3px #333;
+    }
+
+    p {
+      color: #f8f8f8;
+      font-size: 22px;
+      font-style: italic;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  /*===== 换页按钮 =====*/
+  .carousel-control {
+    span {
+      margin-top: 145%;
+      font-size: 50px;
+    }
+  }
+}
+
+/*===== Slogan 首页-口号 =====*/
+.slogan-box {
+  min-height: 300px;
+}
 
 /*===== Categories 首页-商品分类 =====*/
 .categories-box {
@@ -238,8 +350,8 @@ body {
   /*===== Content 分类內容 =====*/
   .category-content {
     padding: 50px 0 0 0;
-
     border-right: 2.5px dashed #ccc;
+
     /*===== Box 分类图片 =====*/
     h3 {
       padding: 20px 0 20px 0;
@@ -258,50 +370,315 @@ body {
   }
 }
 
-/*===== Show 首页-推荐商品 =====*/
-.show-box {
-  text-align: center;
-  padding: 50px 0 50px 0;
-
-  img {
-    width: 100%;
-  }
-
-  .box {
-	  margin-top: 15px;
-	  box-shadow: 0.5px 0.5px 3px #aaa;
-	}
-
-  .three {
-    margin-top: 12px;
-  }
-
-  .box:hover {
-    opacity: 0.6;
-  }
-}
-
-/*===== Brands 首页-合作伙伴 =====*/
-.brand-box {
-  background-color: #F5F5F5;
-  text-align: center;
-  padding: 50px 0 50px 0;
-
-  img {
-    margin: 25px 15px 35px 15px;
-    width: 150px;
-  }
+/*===== Article 首页-文章 =====*/
+.article-box {
+  min-height: 400px;
 }
 
 /*===== Push 首页-立即购买 =====*/
 .push-box {
   text-align: center;
   padding: 75px 0 0 0;
-  height: 200px;
+  min-height: 400px;
   background: image_url("start.jpg") no-repeat scroll top center/ cover;
 }
 
 
+
+
+
+/*===== Product 產品 =====*/
+.product-box {
+  text-align: center;
+  padding: 0 0 100px 0;
+
+  .background-image {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  a {
+    color: #666 !important;
+  }
+
+  .btn {
+    background-color: #fff;
+    margin: 0 10px 0 10px;
+  }
+
+  .btn:hover,
+  .btn:focus {
+    color: #eb5424;
+  }
+
+  .dropdown-menu {
+    li {
+      min-width: 200px;
+      padding: 2.5px 0 2.5px 0;
+    }
+
+    li:hover {
+      a {
+        background-color: #f0f0f0 !important;
+      }
+    }
+  }
+
+  a:hover {
+    color: #eb5424 !important;
+
+    img {
+      opacity: 0.75;
+    }
+  }
+
+  .search-error {
+    margin: 150px 0 150px 0;
+  }
+
+  /*===== 產品列表內容設置 =====*/
+  .product-content {
+    img {
+      width: 100%;
+      margin: 7.5px auto 7.5px auto;
+    }
+
+    h2 {
+      margin-top: 150px;
+    }
+
+
+  }
+
+
+
+  .product-info {
+    text-align: left;
+    line-height: 14px;
+    min-height: 55px;
+  }
+
+  /*===== 產品路徑設置 =====*/
+  .path-box {
+    text-align: left;
+    height: 20px;
+
+    .right-box {
+      button {
+        margin: -15px 0 -15px 0;
+        padding: 7.5px 10px 7.5px 10px;
+        border: 2px solid #666;
+        color: #333;
+      }
+
+      button:focus {
+        background-color: #fff;
+        color: #333;
+      }
+
+      ul {
+        margin-top: 15px;
+      }
+    }
+  }
+
+  /*===== 產品顏色設置 =====*/
+  .color-circle {
+    button {
+      border: none;
+      outline: none;
+      border-radius: 25px;
+      color: #ffffff;
+      padding: 10px 10px 10px 10px;
+      margin: 0px 2px 0px 2px;
+    }
+
+    button:active {
+      outline: none; //點擊不顯示外框
+    }
+  }
+
+  /*===== 精選商品圖示 =====*/
+  .chosen-box {
+    position: absolute;
+    border-radius: 45px;
+    top: 22px;
+    left: 27px;
+    width: 45px;
+    height: 45px;
+    padding-top: 11px;
+    color: #fff;
+    background-color: #02061A;
+    border: 2.5px solid #999;
+    opacity: 0.85;
+    z-index: 1;
+  }
+
+  .location {
+    top: 15px;
+    left: 30px;
+  }
+}
+
+/*===== 產品信息區塊設置 =====*/
+.product-show {
+  margin: 0 0 100px 0;
+
+  /*===== 產品圖片區塊設置=====*/
+  .product-image {
+    .image-box {
+      padding: 7.5px;
+    }
+
+    .main-image {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    .list-image {
+      width: 100%;
+    }
+
+    .list-image-active {
+      box-shadow: 1.5px 1.5px 1.5px #666;
+    }
+  }
+
+  /*===== 產品介紹區塊設置 =====*/
+  .product-detail {
+    // padding: 0 25px 0 25px;
+    text-align: left;
+
+    h1 {
+      margin-top: 5px;
+      font-size: 24px;
+    }
+
+    h3 {
+      font-size: 20px;
+      margin-bottom: 25px;
+    }
+
+    hr {
+      border: 0;
+      border-bottom: 1px dashed #aaa;
+      margin: 30px 0 30px 0;
+    }
+
+    img {
+      width: 17.5px;
+    }
+
+    div {
+      display: block;
+    }
+
+    .price {
+      height: 60px;
+    }
+
+    .currency {
+      margin: 10px 0 0 0;
+
+      button {
+        margin-right: -10px;
+      }
+
+      ul{
+        margin-top: -5px;
+      }
+    }
+
+    .wish {
+      margin-left: 15px;
+      font-weight: 600;
+    }
+
+    .share {
+      margin-right: 15px;
+    }
+
+    /*===== 按鈕設置 =====*/
+    .btn-default {
+      margin-top: 25px;
+      width: 100%;
+      color: #666;
+    }
+
+    .btn-default:hover {
+      background-color: #fff;
+      border-color: #eb5424;
+      color: #eb5424;
+    }
+
+    .quantity-box {
+      height: 20px;
+
+      .quantity-input {
+        width: 50px;
+        text-align: center;
+        border: 1px solid #ccc;
+        border-radius: 2.5px;
+        outline: none;
+      }
+
+      .quantity-input:focus {
+        border: 1px solid #000;
+      }
+
+      .quantity-actions {
+        padding: 2.5px 10px 2.5px 10px;
+        border: 1px solid #ccc;
+        border-radius: 2.5px;
+      }
+
+      .quantity-actions:hover {
+        border: 1px solid #eb5424;
+      }
+
+      .quantity-none {
+        color: #999;
+        font-weight: 500;
+      }
+
+      .quantity-button {
+        margin-top: -2px;
+      }
+
+      .quantity-stock {
+        margin-left: 5px;
+        color: red;
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+.suggest-box {
+
+  hr.suggest {
+    margin: 80px auto 0px auto;
+    max-width: 250px;
+    border-bottom: 2px double #8c8b8b !important;
+    text-align: center;
+  }
+
+  hr.suggest:after {
+    content: 'BEST MATCHES';
+    display: inline-block;
+    position: relative;
+    top: -14px;
+    padding: 0 10px;
+    background: #fff;
+    font-size: 18px;
+  }
+
+  img {
+    margin: 30px auto 0px auto;
+    width: 110px !important;
+  }
+
+}
 
 /*===== Content 網站-內容區塊排版設定 =====*/
 .content-box {
@@ -679,12 +1056,6 @@ body {
 }
 
 
-
-
-
-
-
-
 /*===== Users 用戶中心 =====*/
 .user_setup{
   height: 750px;
@@ -806,12 +1177,5 @@ body {
 .col-centered {
   float: none;
   margin: 0 auto; //置中
-  margin-top: 50px;
-}
-
-
-//footer固定在页面底部
-
-html {
-  height:100%;
+  margin-top: 50px
 }
