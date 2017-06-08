@@ -6,6 +6,14 @@ Rails.application.routes.draw do
 root 'welcome#index'
 # root 'products#index'
 
+# 文章 #
+resources :articles do         #文章前台
+  resources :article_reviews
+  member do
+    post :join              #加入收藏
+    post :quit              #取消收藏
+  end
+end
 
 #--=== 前台 ===--#
 
