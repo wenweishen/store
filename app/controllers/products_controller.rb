@@ -1,7 +1,10 @@
 class ProductsController < ApplicationController
+  before_action :authenticate_user!, only: [:add_to_wish_list, :remove_from_wish_list]
+  before_action :validate_search_key, only: [:search]
+
 
    def index
-     # 商品类型/品牌
+     # 商品类型
      #@products = Product.all
      @category_groups = CategoryGroup.published
 
@@ -36,10 +39,8 @@ class ProductsController < ApplicationController
     @orderSum = OrderItem.where("product_id" => @product.id).sum(:quantity)
     @product_stock = @product.quantity - @orderSum
 
-    # 隨機推薦 3 項商品
-    @suggests = Product.published.random3
 
-    # 類型 / 品牌 / 幣值
+    # 類型 / 幣值
     @category_groups = CategoryGroup.published
     @currencies = Currency.all
 

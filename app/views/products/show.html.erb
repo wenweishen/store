@@ -51,7 +51,6 @@
           </div>
           <hr />
           <div>
-            <p><%= t('product-brand') %>：<%= link_to(@product.brand.title, products_path(:brand => @product.brand.title)) %></p>
             <br/>
             <p>
               <!--=== 如果庫存數量大於零 ===-->
@@ -80,10 +79,26 @@
           <hr />
 
           <div class='row'>
-            <!-- 願望清單 -->
+            <!-- 收藏 & 分享 -->
+            <div class='left-box wish'>
+              <% if current_user && current_user.is_wish_list_owner_of?(@product) %>
+                <%= link_to remove_from_wish_list_product_path(@product), method: :post do %>
+                  <i class='fa fa-check fa-fw'> </i><%= t('wish-list-remove') %>
+                <% end %>
 
+              <% else %>
+                <%= link_to add_to_wish_list_product_path(@product), method: :post do %>
+                  <i class='fa fa-plus fa-fw'> </i><%= t('wish-list-add') %>
+                <% end %>
 
-
+              <% end %>
+            </div>
+            <div class='right-box share'>
+              <%= social_share_button_tag(@product.title, :allow_sites => %w(facebook twitter google_plus wechat weibo),
+                                                          :image => @product_images.first.image.main.url ,
+                                                          desc: @product.description,
+                                                          via: 'J&A SELECT - '+@product.title, 'data-twitter-title' => 'J&A SELECT - '+@product.title) %>
+            </div>
           </div>
           <!--=== 如果庫存數量大於零 ===-->
           <% if @orderSum < @product.quantity && @product.quantity > 0 %>
