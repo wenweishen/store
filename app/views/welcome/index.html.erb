@@ -1,64 +1,98 @@
 <div class="welcome-box">
-  <!--===== 廣告輪播 =====-->
-  <section class="intro-box">
+
+<!-- ↓↓↓ 大图滚动banner 代码块↓↓↓ -->
+  <div class="row">
+    <div class="carousel fade-carousel slide" data-ride="carousel" data-interval="4000" id="bs-carousel">
+<div class="overlay"></div>
+      <!-- 默认三张图列表 -->
+      <div class="banner">
+        <ul class="carousel-indicators ">
+          <li data-target="#bs-carousel" data-slide-to="0" class="active"></li>
+          <li data-target="#bs-carousel" data-slide-to="1"></li>
+          <li data-target="#bs-carousel" data-slide-to="2"></li>
+        </ul>
+      </div>
+
+      <!-- 文案部分 -->
+      <div class="carousel-inner">
+        <div class="item slides active">
+          <div class="slide-1"></div>
+          <div class="hero row">
+            <hgroup>
+                <h1><%= t('slogan-1') %></h1>
+                <h3><%= t('slogan-plus-1') %></h3>
+            </hgroup>
+            <!-- <button class="btn btn-hero btn-lg" role="button">测试跳转链接</button> -->
+          </div>
+        </div>
+        <div class="item slides">
+          <div class="slide-2"></div>
+          <div class="hero">
+            <hgroup>
+                <h1><%= t('slogan-2') %></h1>
+                <h3><%= t('slogan-plus-2') %></h3>
+            </hgroup>
+            <!-- <button class="btn btn-hero btn-lg" role="button">测试跳转链接</button> -->
+          </div>
+        </div>
+        <div class="item slides">
+          <div class="slide-3"></div>
+          <div class="hero">
+            <hgroup>
+                <h1><%= t('slogan-3') %></h1>
+                <h3><%= t('slogan-plus-3') %></h3>
+            </hgroup>
+            <!-- <button class="btn btn-hero btn-lg" role="button">测试跳转链接</button> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!--===== 文章按钮区域 =====-->
+<section class="article-box">
+  <div class="container">
     <div class="row">
-      <div class="col-md-12">
-        <div id="intro" class="carousel slide" data-ride="carousel">
-          <!--===== 輪播按鈕 =====-->
-          <!-- <ol class="carousel-indicators">
-          <li data-target="#intro" data-slide-to="0" class="active"></li>
-          <li data-target="#intro" data-slide-to="1"></li>
-          <li data-target="#intro" data-slide-to="2"></li>
-        </ol> -->
-          <!--===== 輪播內容 =====-->
-          <div class="carousel-inner" role="listbox">
-            <% @intros.each_with_index do |intro,index| %>
-              <% if index == 0 %>
-                <div class="item active">
-                <% else %>
-                  <div class="item">
-                  <% end %>
-                  <%= link_to intro.link, target: "_blank" do %>
-                    <%= image_tag(intro.image) %>
-                    <div class="carousel-caption">
-                      <h3><%= intro.title %></h3>
-                      <p><%= intro.content %></p>
-                    </div>
-                  <% end %>
-                </div>
+      <div class="col-xs-6">
+        <h3 class="titspan">文章</h3>
+      </div>
+      <div class="col-xs-6">
+        <%= link_to("more >", articles_path, class: "pull-right morespan") %>
+      </div>
+    </div>
+    <div class="row">
+      <% @articles.each do |article| %>
+        <div class="article-all col-md-6 container">
+          <div class="article-box row">
+            <!-- 文章列表图片 -->
+            <div class="col-md-5 all_image_css">
+              <% if article.image.present? %>
+                <%= link_to image_tag(article.image.articleimg.url, class: "product-list-style-img img-responsive"), article_path(article) %>
+              <% else %>
+                <%= link_to image_tag("http://placehold.it/600x400&text=No Pic", class: "product-list-style-img img-responsive"), article_path(article)%>
               <% end %>
             </div>
-            <!--===== 換頁按鈕 =====-->
-            <a class="left carousel-control" href="#intro" role="button" data-slide="prev">
-              <span class="fa fa-angle-left" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="right carousel-control" href="#intro" role="button" data-slide="next">
-              <span class="fa fa-angle-right" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </a>
+            <!-- 文章列表标题、作者、日期 -->
+            <div class="col-md-7">
+              <%= link_to(article.title, article_path(article), class: "article-index-title") %>
+              <div class="article-user row">
+                <div class="col-md-6">
+                  <span> <%= article.user.display_name %></span>
+                </div>
+                <div class="col-md-6">
+                  <span> <%= article.created_at.strftime("%Y-%m-%d %H:%M:%S") %></span>
+                </div>
+              </div>
+            </div>
           </div>
+          <hr>
         </div>
-      </div>
+      <% end %>
     </div>
-  </section>
-  <hr />
-  <!-- 中间区域介绍内容 -->
-  <section class="slogan-box">
-    <div class="landing-page-mid">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <h1 class="tagline text-center"><%= t('slogan') %></h1>
-            <div class="short-line"></div>
-            <p class="col-md-6 col-md-offset-3 text-center tagp">
-              <%= t('slogan-plus') %>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  </div>
+</section>
+
+
   <!--===== 商品类型 =====-->
   <section class="categories-box">
     <div class="row">
@@ -75,7 +109,8 @@
       </div>
       <div class="col-md-4 category-content">
         <%= link_to 'heroku上对应的网址链接' , class: "category_2" do %>
-it            <%= image_tag("category_2.jpg") %>
+          <div class="category-box">
+           <%= image_tag("category_2.jpg") %>
           </div>
           <div>
             <h3><%= t('th-second') %></h3>
@@ -96,51 +131,29 @@ it            <%= image_tag("category_2.jpg") %>
       </div>
     </div>
   </section>
-  <!--===== 文章按钮区域 =====-->
-  <section class="article-box">
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-6">
-          <h3 class="titspan">文章</h3>
-        </div>
-        <div class="col-xs-6">
-          <%= link_to("more >", articles_path, class: "pull-right morespan") %>
-        </div>
-      </div>
-      <div class="row">
-        <% @articles.each do |article| %>
-          <div class="article-all col-md-6 container">
-            <div class="article-box row">
-              <!-- 文章列表图片 -->
-              <div class="col-md-5 all_image_css">
-                <% if article.image.present? %>
-                  <%= link_to image_tag(article.image.articleimg.url, class: "product-list-style-img img-responsive"), article_path(article) %>
-                <% else %>
-                  <%= link_to image_tag("http://placehold.it/600x400&text=No Pic", class: "product-list-style-img img-responsive"), article_path(article)%>
-                <% end %>
-              </div>
-              <!-- 文章列表标题、作者、日期 -->
-              <div class="col-md-7">
-                <%= link_to(article.title, article_path(article), class: "article-index-title") %>
-                <div class="article-user row">
-                  <div class="col-md-6">
-                    <span> <%= article.user.display_name %></span>
-                  </div>
-                  <div class="col-md-6">
-                    <span> <%= article.created_at.strftime("%Y-%m-%d %H:%M:%S") %></span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <hr>
-          </div>
-        <% end %>
-      </div>
-    </div>
-  </section>
-  <hr/>
+
   <!--===== 立即購買 =====-->
   <section class="push-box">
     <%= link_to(t('btn-buy-now'), products_path, class:'btn btn-push' ) %>
   </section>
+
+  <!--  Guide to join 首页 引导加入版块 -->
+  <section class="guide-box">
+    <div class="landing-page-mid">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h1 class="tagline text-center"><%= t('guide') %></h1>
+            <div class="short-line"></div>
+            <p class="col-md-6 col-md-offset-3 text-center tagp">
+              <%= t('guide-plus') %>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
 </div>
