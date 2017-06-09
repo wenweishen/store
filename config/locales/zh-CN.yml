@@ -1,12 +1,12 @@
 zh-CN:
 #--=== web-name ===--#
-  web-name: BigBangBoardGame
-  web-name-min: BBBG
+  web-name: 定制桌游
+  web-name-min: BG
 
 #--=== Devise 相关 ===--#
   devise:
     failure:
-      unauthenticated: 您必须是 BBBG 用户才能进行操作。
+      unauthenticated: 您必须是 BG 用户才能进行操作。
       not_found_in_database: 此帐号不存在。
       invalid: 帐号或密码输入错误。
     sessions:
@@ -27,8 +27,8 @@ zh-CN:
   dv-check-email: you@example.com
   dv-name: 用户名称
   dv-find-pwd: 取得密码
-  dv-account-signin: 已经是 BBBG 用户了吗？按此登入
-  dv-no-account-signup: 现在就加入 BBBG
+  dv-account-signin: 已经是 BG 用户了吗？按此登入
+  dv-no-account-signup: 现在就加入 BG
   dv-user: 人才
   dv-admin: 企业
   dv-set-pwd: 设定 6 到 16 字位密码
@@ -56,26 +56,26 @@ zh-CN:
   about-anndo: 一般来说，多数同学，上来听了两分钟规则，就开始坐不住了，五分钟以后，已经摸出手机玩微信了，十分钟？不是掀桌就是睡过去了。碰上一个同学，不仅能耐心的听完半小时的规则，听完后还要指出有些细节没听明白，能不能再详细解释一下，没彻底搞清规则前，坚决不开始游戏，那十有八九，他就是个程序员！
 
   # 大图滚动banner 代码块 #
-  slogan-1: 为什么程序员命中注定应该玩桌游？
-  slogan-plus-1: 因为气质匹配，相性相吸
-  slogan-2: 喜欢折腾自己
-  slogan-plus-2: 热衷学习各种玩意
-  slogan-3: 热爱条条框框
-  slogan-plus-3: ??
+  slogan-1: 个性化定制桌游
+  slogan-plus-1: 结合社交媒体数据
+  slogan-2: 帮你记录
+  slogan-plus-2: 与家人和朋友在一起的美好时光
+  slogan-3: 让我们的生活
+  slogan-plus-3: 更有趣味
 
   # 加入我们 #
   guide:
   guide-plus:
 
   # 商品分类 #
-  th-first: 欢乐聚会游戏
-  explain-first: 一般规则都比较简单，适合人多图乐子的场合。各类身份猜测和嘴炮类的游戏，比如狼人杀、抵抗组织大抵都属于这类。
+  th-first: 家人&朋友
+  explain-first: 产品说明
 
-  th-second: 主题扮演游戏
-  explain-second: 通常也被称作美式桌游，注重游戏背景的代入感，游戏内容通常带有强烈的主题色彩，一般都带有角色扮演的性质，内容具象，新手玩家容易被吸引。美式游戏历史比较悠久，早期的代表有D&D龙、地下城等。
+  th-second: 同学&同事
+  explain-second: 产品说明
 
-  th-third: 德式策略游戏
-  explain-third: 这类桌游通常都需要玩家根据场上的形势和对手的行动，选择对自己最有利的游戏策略。背景题材广泛，复杂难易程度跨度很大。众多资深桌游爱好者对其乐此不疲。
+  th-third: 公司文化&同行交流
+  explain-third: 产品说明
 
   # 推荐商品 #
   th-featured-products: 精选商品

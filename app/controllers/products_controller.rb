@@ -4,7 +4,6 @@ class ProductsController < ApplicationController
      # 商品类型/品牌
      #@products = Product.all
      @category_groups = CategoryGroup.published
-     @brands = Brand.published
 
      # 判斷是否篩選分類
      if params[:category].present?
@@ -20,12 +19,6 @@ class ProductsController < ApplicationController
 
        @products = Product.joins(:category).where("categories.category_group_id" => @group.id).published.recent.paginate(:page => params[:page], :per_page => 12)
 
-     # 判斷是否篩選品牌
-     elsif params[:brand].present?
-       @brand_s = params[:brand]
-       @brand = Brand.find_by(name: @brand_s)
-
-       @products = Product.where(:brand => @brand.id).published.recent.paginate(:page => params[:page], :per_page => 12)
 
      # 判斷是否選擇精選商品
      elsif params[:chosen].present?
@@ -48,7 +41,6 @@ class ProductsController < ApplicationController
 
     # 類型 / 品牌 / 幣值
     @category_groups = CategoryGroup.published
-    @brands = Brand.published
     @currencies = Currency.all
 
     # set_page_title       @product.title

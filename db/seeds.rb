@@ -6,26 +6,19 @@
 #   movies = Movie.create([{ title: 'Star Wars' }, { title: 'Lord of the Rings' }])
 #   Character.create(title: 'Luke', movie: movies.first)
 
-# u = User.new
-# u.email = "admin@test.com"           # 可以改成自己的 email
-# u.password = "123456"                # 最少要六码
-# u.password_confirmation = "123456"   # 最少要六码
-# u.is_admin = true
-# u.save
-
 # 新增 admin 帳號  User #
   if User.find_by(email: 'admin@rails.com').nil?
     u = User.new
 #    u.title = '測試管理員'
     u.email = 'admin@rails.com'
-    u.nickname = '測試管理員'
+    u.nickname = '测试管理员'
     u.password = '111111'
     u.password_confirmation = '111111'
     u.is_admin = true
     u.save
-    puts '創建管理員*1'
+    puts '创建管理員*1'
   else
-    puts '已創建過此帳號，不重複新增。'
+    puts '已创建过此账号，不重复新增。'
   end
 
   # 新增 user 帳號  User #
@@ -33,14 +26,14 @@
     u = User.new
 #    u.title = '測試管理員'
     u.email = 'user@rails.com'
-    u.nickname = '測試管理員'
+    u.nickname = '测试用户'
     u.password = '111111'
     u.password_confirmation = '111111'
     u.is_admin = false
     u.save
-    puts '創建一般用戶*1'
+    puts '创建一般用戶*1'
   else
-    puts '已創建過此帳號，不重複新增。'
+    puts '已创建过此账号，不重复新增。'
   end
 
 
@@ -76,7 +69,7 @@
       rate: 3.69
     )
 
-    puts '創建初始幣別*5：人民币、新台币、欧元、美金、日圆'
+    puts '创建初始货币*5：人民币、新台币、欧元、美金、日圆'
 
   # 新增廣告  Intro #
 
@@ -108,205 +101,135 @@
       link: '#'
     )
 
-    puts '創建廣告*4'
+    puts '创建广告*4'
 
-  # 新增類型  Category #
+
+
+  # 新增类型  Category #
     CategoryGroup.create!(
-      title: '日常文具'
+      title: '家人&朋友'
     )
 
     CategoryGroup.create!(
-      title: '生活器物'
+      title: '同学&同事'
     )
 
     CategoryGroup.create!(
-      title: '個人單品'
+      title: '公司文化&同行交流'
     )
 
-    puts '創建類型*3：日常文具、生活器物、個人單品'
+    puts '创建类型*3：家人&朋友、同学&同事、公司文化&同行交流'
 
   # 新增分類  Category #
-    # 文具
+    # 家人&朋友
     # 1
     Category.create!(
       category_group_id: 1,
-      title: '筆具'
+      title: '成长'
     )
 
     # 2
     Category.create!(
       category_group_id: 1,
-      title: '筆袋'
+      title: '生日'
     )
 
     # 3
     Category.create!(
       category_group_id: 1,
-      title: '紙本'
+      title: '家庭大事记'
     )
 
+    puts '创建「家人&朋友」分类*3：成长、生日、家庭大事记'
+
+    # 同学&同事
     # 4
     Category.create!(
-      category_group_id: 1,
-      title: '刀剪'
+      category_group_id: 2,
+      title: '高中'
     )
 
     # 5
     Category.create!(
-      category_group_id: 1,
-      title: '尺規'
+      category_group_id: 2,
+      title: '大学'
     )
 
-    puts '創建「日常文具」分類*5：筆具、筆袋、紙本、刀剪、書籤'
-
-    # 生活
     # 6
     Category.create!(
       category_group_id: 2,
-      title: '收納'
+      title: '糗事一箩筐'
     )
 
+    puts '创建「同学&同事」分类*3：高中、大学、糗事一箩筐'
+
+    # 公司文化&同行交流
     # 7
     Category.create!(
-      category_group_id: 2,
-      title: '裝飾'
+      category_group_id: 3,
+      title: '团队建设'
     )
-
     # 8
     Category.create!(
-      category_group_id: 2,
-      title: '器皿'
-    )
-
-    puts '創建「生活器物」分類*3：收納、裝飾、器皿'
-
-    # 個人
-    # 9
-    Category.create!(
       category_group_id: 3,
-      title: '提袋'
-    )
-    # 10
-    Category.create!(
-      category_group_id: 3,
-      title: '皮件'
-    )
-    # 11
-    Category.create!(
-      category_group_id: 3,
-      title: '小物'
+      title: '行业大事记'
     )
 
-    puts '創建「個人單品」分類*3：提袋、皮件、小物'
-
-  # 新增品牌  Brand #
-    # 1 Tools to Liveby / 禮拜文房具
-    Brand.create!(
-    title: 'Tools to Liveby / 禮拜文房具',
-    description: '
-    在平凡中，發現不平凡的美
-    禮拜文房具設計簡單美好的文書工具，期待改變大家桌上的風景，讓每天工作的好心情就從隨手使用的文具開始。'
-    )
-
-    # 2 Kaweco
-    Brand.create!(
-    title: 'Kaweco',
-    description: '
-    「體積雖小，但成就無限」是 Kaweco® 的創業精神精神標語。
-    德國品牌 Kaweco 的設計理念恰恰符合了歐洲時下最流行的「極簡」，其中攜帶便利的短筆筆型為最具代表性的款式之一。'
-    )
-
-    # 3 RHODIA
-    Brand.create!(
-    title: 'RHODIA',
-    description: '
-    RHODIA 來自法國，筆記本紙感滑順，強調使用便利、高品質用紙，適用各種筆款墨水書寫。這樣的設計及用料堅持，讓 RHODIA 筆記本一直是許多歐美名人及設計師的最愛。'
-    )
-
-    # 4 BRAUN
-    Brand.create!(
-    title: 'BRAUN',
-    description: '
-    德國品牌 BRAUN 專注於提供人們所需要的產品功能，操作讓人一看到操作介面，就能立即上手。對於設計美感更是絲毫不妥協，線條俐落，每一個產品細節都完美展現簡單大方的設計美學。'
-    )
-
-    # 5
-    Brand.create!(
-    title: 'Midori',
-    description: '來自日本的 Midori，創立於 1950 年，半個世紀以來，透過提供頂級紙製品，讓無數的人重新愛上書寫。'
-    )
-
-    # 6
-    Brand.create!(
-    title: 'Hightide',
-    description: 'Hightide 是日本知名的文具公司，Hightide 相信文具能在我們的日常生活和工作中產生不同的影響，希望為大家提供質量高的文具，在情感和精神上都得到滿足。'
-    )
-
-    #7
-    Brand.create!(
-    title: 'Merchant & Mills',
-    description: 'Merchant & Mills 創辦於 2010 年，旨在激勵人們對原始手工縫製的熱愛。他們擁有專業的時尚嗅覺，堅持用高品質的面料手工縫紉服裝。「手工縫製重新回歸了人們的視線，現在有關手工製作的所有事情都即將引發新的潮流。」。
-    '
-    )
+    puts '创建「公司文化&同行交流」分类*2：团队建设、行业大事记'
 
 
-    puts '創建品牌*6'
-
-
-
-
-
-# # 新增商品  Product #
-#
-#   Product.create!(
-# #  brand_id: 1,
-#   title: "权力的游戏-国王之手",
-#   description: "权力的游戏-国王之手，规则简单，画风犀利，轻度策略",
-#   price: 300,
-#   quantity: 5,
-#   image: open("https://ws4.sinaimg.cn/large/006tNbRwgy1fgashd7q13j309q0bf7ai.jpg"),
-#   category_id: 1,
-# #  can_sell: true
-#   )
-#
-# Product.create!(
-# #  brand_id: 1,
-#   title: "Twlight Struggle（冷战热斗）",
-#   description: "以美苏冷战为背景，玩家模拟美苏其中的一方，行走在核战危机的边缘，在全球范围内拓展自己的影响力",
-#   price: 300,
-# #  stock: 5,
-#   quantity: 5,
-#   image: open("https://ws2.sinaimg.cn/large/006tNbRwgy1fgasnhlmb2j30m80m8gzm.jpg"),
-# #  category_id: 2,
-# #  can_sell: true
-#   )
-#
-# Product.create!(
-# #  brand_id: 1,
-#   title: "Wonders:Duel(七大奇迹:对决)",
-#   description: "文明背景的建设类游戏，曾经一度名列BGG游戏榜单前十",
-#   price: 300,
-# #  stock: 5,
-#   quantity: 5,
-#   image: open("https://ws4.sinaimg.cn/large/006tNbRwgy1fgasqvoz9kj30k00jzqpp.jpg"),
-# #  category_id: 3,
-# #  can_sell: true
-#   )
-#
-#   Product.create!(
-# #    brand_id: 1,
-#     title: "Babel(通天塔)",
-#     description: "最佳分手游戏",
-#     price: 300,
-#   #  stock: 5,
-#     quantity: 5,
-#     image: open("https://ws2.sinaimg.cn/large/006tNbRwgy1fgat3ncl2lj30dv0dwna0.jpg"),
-# #    category_id: 3,
-#   #  can_sell: true
-#     )
 
 
 # 新增商品  Product #
+Product.create!(
+   title: "权力的游戏-国王之手",
+   description: "权力的游戏-国王之手，规则简单，画风犀利，轻度策略",
+   price: 300,
+   quantity: 5,
+   category_id: 1,
+   is_hidden: false
+#   image: open("https://ws4.sinaimg.cn/large/006tNbRwgy1fgashd7q13j309q0bf7ai.jpg"),
+)
+
+Product.create!(
+   title: "Twlight Struggle（冷战热斗）",
+   description: "以美苏冷战为背景，玩家模拟美苏其中的一方，行走在核战危机的边缘，在全球范围内拓展自己的影响力",
+   price: 300,
+   quantity: 5,
+   category_id: 2,
+   is_hidden: false
+#   image: open("https://ws2.sinaimg.cn/large/006tNbRwgy1fgasnhlmb2j30m80m8gzm.jpg"),
+)
+
+ Product.create!(
+   title: "Wonders:Duel(七大奇迹:对决)",
+   description: "文明背景的建设类游戏，曾经一度名列BGG游戏榜单前十",
+   price: 300,
+   quantity: 5,
+   category_id: 3,
+   is_hidden: false
+#   image: open("https://ws4.sinaimg.cn/large/006tNbRwgy1fgasqvoz9kj30k00jzqpp.jpg"),
+)
+
+   Product.create!(
+     title: 'Babel(通天塔)',
+     description: '最佳分手游戏',
+     price: 300,
+     quantity: 5,
+     category_id: 1,
+     is_hidden: false
+#     image: open("https://ws2.sinaimg.cn/large/006tNbRwgy1fgat3ncl2lj30dv0dwna0.jpg"),
+     )
+
+  Product.create!(
+    title: 'Babel(通天塔)',
+    description: '最佳分手游戏',
+    price: 300,
+    quantity: 5,
+    category_id: 1,
+    is_hidden: false
+#       image: open("https://ws2.sinaimg.cn/large/006tNbRwgy1fgat3ncl2lj30dv0dwna0.jpg"),
+  )
 
   Product.create!(
     title: 'Tools to Liveby 手工皮革筆袋（大）',
@@ -316,7 +239,6 @@
     price: 2500,
     quantity: 3,
     category_id: 2,
-    brand_id: 1,
     is_hidden: false
   )
 
@@ -329,7 +251,6 @@
     price: 300,
     quantity: 5,
     category_id: 3,
-    brand_id: 1,
     is_hidden: false
   )
 
@@ -340,8 +261,7 @@
     ',
     price: 560,
     quantity: 10,
-    category_id: 4,
-    brand_id: 1,
+    category_id: 1,
     is_hidden: false
   )
 
@@ -352,8 +272,7 @@
     ',
     price: 45,
     quantity: 10,
-    category_id: 4,
-    brand_id: 1,
+    category_id: 1,
     is_hidden: false
   )
 
@@ -364,8 +283,7 @@
     ',
     price: 450,
     quantity: 15,
-    category_id: 9,
-    brand_id: 1,
+    category_id: 1,
     is_hidden: false
   )
 
@@ -377,8 +295,7 @@
     ',
     price: 450,
     quantity: 8,
-    category_id: 9,
-    brand_id: 1,
+    category_id: 1,
     is_hidden: false
   )
 
@@ -389,8 +306,7 @@
     ',
     price: 300,
     quantity: 20,
-    category_id: 9,
-    brand_id: 1,
+    category_id: 1,
     is_hidden: false
   )
 
@@ -404,132 +320,7 @@
     price: 2500,
     quantity: 20,
     category_id: 1,
-    brand_id: 2,
     is_hidden: false
   )
 
-  Product.create!(
-    title: 'Kaweco 經典鋼筆（EF尖）',
-    description: '
-    Kaweco 經典筆款，有著八角形的筆管及可以放進口袋中的小巧體積，20世紀初推出後旋即主導了德國鋼筆界的主流。
-    便利的特性，也使它成為該品牌銷售榜上歷久不衰的產品，至今 Kaweco 已是德國體育界標準隨身配用鋼筆筆具。
-    ',
-    price: 910,
-    quantity: 1,
-    category_id: 1,
-    brand_id: 2,
-    is_hidden: false
-  )
-
-  Product.create!(
-    title: 'Kaweco Liliput 迷你手帳型鋼筆（F尖）',
-    description: '
-    德國 Kaweco 2014年的新商品：Liliput 迷你手帳型鋼筆，可能會是你所擁有過最小的一支鋼筆，以耐久耐用的黃銅材質所製作，總長度僅有 9.6 公分，使用時再將筆蓋旋轉接上筆尾螺紋處，讓書寫更方便順手。
-    ',
-    price: 3200,
-    quantity: 2,
-    category_id: 1,
-    brand_id: 2,
-    is_hidden: false
-  )
-
-  Product.create!(
-    title: 'Rhodia 筆記本 N°16 （點線）',
-    description: '
-    來自法國，筆記本紙感滑順，使用便利的貼心設計，紙質為無酸紙，適用各種筆款墨水書寫。
-    封面有三道折痕，方便將封面往後折，底部加了紙板，無論在何處記錄都不成問題!更特別的是，筆記本上方有裁切線，易撕不費力，方便好用。
-    ',
-    price: 200,
-    quantity: 7,
-    category_id: 3,
-    brand_id: 3,
-    is_hidden: false
-  )
-
-  Product.create!(
-    title: 'Rhodia 筆記本 N°13（方格）',
-    description: '
-    來自法國，筆記本紙感滑順，使用便利的貼心設計，紙質為無酸紙，適用各種筆款墨水書寫。
-    封面有三道折痕，方便將封面往後折，底部加了紙板，無論在何處記錄都不成問題!更特別的是，筆記本上方有裁切線，易撕不費力，方便好用。
-    ',
-    price: 150,
-    quantity: 4,
-    category_id: 3,
-    brand_id: 3,
-    is_hidden: false
-  )
-
-  Product.create!(
-    title: 'Merchant & Mills Fine Art Print',
-    description: '
-    精美的經典黑白海報選用高級藝術紙，符合攝影師以及藝術家對於紙質的高要求。海報上為 Merchant & Mills 產品的圖案，不但美觀又精緻，值得收藏。
-    ',
-    price: 2690,
-    quantity: 5,
-    category_id: 7,
-    brand_id: 7,
-    is_hidden: false
-  )
-
-  Product.create!(
-    title: 'Midori 經典黃銅系列尺',
-    description: '
-    Midori 黃銅系列－刻畫歲月痕跡的文具，這一系列有鉛筆盒、尺、原子筆、鉛筆還有書籤，除了書籤以外，全部都是由日本職人親手打造。黃銅 (brass) 是紅銅與鋅的合金，因色黃而得名，黃銅的機械性能和耐磨性能都很好，可用於製造精密儀器、船舶的零件、樂器、槍炮的彈殼等，黃銅表面會因為時間流逝而酸化變色，呈現出獨特的光澤，若是你喜歡物品經過長時間的使用而留下歲月的痕跡，那麼 Midori 黃銅系列是個很好的選擇。
-    ',
-    price: 400,
-    quantity: 9,
-    category_id: 5,
-    brand_id: 5,
-    is_hidden: false
-  )
-
-  Product.create!(
-    title: 'Midori MD Light筆記本（文庫/空白）',
-    description: '
-    Midori 筆記本讓您重新愛上書寫。
-    Midori 筆記本在目前的筆記本市場中算是獨具特色的一款。它所使用的紙質不需多說，適合鋼筆書寫，能徹底攤開的貼心設計，將書寫跟閱讀變得更容易了。而它的封面設計非常簡單，是相當低調的白色封面，但是封面套上一層半透明的描圖紙，增加了設計的深度與層次；在極簡之中卻有細節。
-    ',
-    price: 400,
-    quantity: 5,
-    category_id: 3,
-    brand_id: 5,
-    is_hidden: false
-  )
-
-  Product.create!(
-    title: 'Hightide 微型收納鐵盒',
-    description: '
-    馬口鐵材質，迷你的尺寸是剛好可以裝入名片的大小，共有紅、黑、藍 3 色，可將桌上散落的小物、飾品分門別類地收納，外型像個小急救箱，可愛的模樣讓人想一次全入手！
-    ',
-    price: 270,
-    quantity: 4,
-    category_id: 6,
-    brand_id: 6,
-    is_hidden: false
-  )
-
-  Product.create!(
-    title: 'Hightide 美耐皿淺盤（M）',
-    description: '
-    大理石模樣的美耐皿置物盤，質地輕巧，可隨手放置文具、鑰匙、個人物品，或是用來當作店鋪的零錢盤，美化你的桌上風景。
-    ',
-    price: 550,
-    quantity: 450,
-    category_id: 6,
-    brand_id: 6,
-    is_hidden: false
-  )
-
-  Product.create!(
-    title: 'Hightide 迷你工具盒',
-    description: '
-    迷你尺寸的工具箱，適合桌上收納小物，附有把手，全系列共三種顏色可選擇。
-    ',
-    price: 400,
-    quantity: 4,
-    category_id: 6,
-    brand_id: 6,
-    is_hidden: false
-  )
-
-  puts '創建商品*18'
+  puts '創建商品*13'
