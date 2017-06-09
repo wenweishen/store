@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, :controllers => { :registrations => "users/registrations" }
+  devise_for :users
 
 
 #--=== 首頁 ===--#
@@ -96,27 +96,28 @@ end
    # 品牌 #
 
    # 類型 #
-
+   resources :category_groups do
+     member do
+       post :publish
+       post :hide
+     end
+   end
    # 分類 #
-
+   resources :categories do
+     member do
+       post :publish
+       post :hide
+     end
+   end
 
 
    # 首頁 Covers #
-
+   resources :intros do
+     member do
+       post :publish
+       post :hide
+     end
+   end
  end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
