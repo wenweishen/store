@@ -1,0 +1,45 @@
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class='col-xs-12 col-md-6 product-image'>
+<!-- 商品图片 -->
+  <div class="row">
+    <% if @product_images.present? %>
+    <!-- 第一张图为 medium 尺寸大圖 -->
+    <div class="col-md-12">
+      <%= image_tag(@product_images.first.image.medium.url, class: 'main-image') %>
+    </div>
+      <% @product_images.each_with_index do |p| %>
+        <!-- 顯示所有商品圖片 - other 尺寸小圖 -->
+        <div class="col-md-2 col-sm-4 col-xs-6 image-box">
+          <%= image_tag(p.image.other.url, class: 'list-image') %>
+        </div>
+      <% end %>
+    <% else %>
+      <%= image_tag('http://placehold.it/300x300&text=No Pic', class: 'thumbnail') %>
+    <% end %>
+  </div>
+</div>
+
+<div class='col-xs-12 col-md-6'>
+  <h1> <%= @product.title %> </h1>
+  <!-- 所屬主類別 -->
+  <h3><%= t('f-category-group') %></h3>
+  <p><%= @product.category.category_group.title %></p>
+
+  <!-- 所屬類別 -->
+  <h3><%= t('f-product-category') %></h3>
+  <p><%= @product.category.title %></p>
+
+
+  <!-- 商品價錢 -->
+  <h3><%= t('f-product-price') %></h3>
+  <p><%= @product.price %></p>
+
+  <!-- 商品庫存 -->
+  <h3><%= t('f-product-quantity') %></h3>
+  <p><%= @product.quantity %></p>
+</div>

@@ -1,4 +1,4 @@
-<h2> Edit Product </h2>
+<!-- <h2> Edit Product </h2>
 
 <%= simple_form_for [:admin, @product] do |f| %>
 
@@ -29,4 +29,8 @@
 
   <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
 
-<% end %>
+<% end %> -->
+
+<!--=== 編輯商品 ===-->
+<h2><span class="fa fa-pencil-square-o"></span> <%= t('product-edit') %></h2>
+<%= render('form') %>

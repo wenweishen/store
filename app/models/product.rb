@@ -1,11 +1,11 @@
 class Product < ApplicationRecord
   mount_uploader :image, ImageUploader
   # 新增/修改欄位限制與提示 #
-  validates :title, presence: { message: "請輸入商品名稱" }
-  validates :price, presence: { message: "請輸入商品售價" }
-  validates :price, numericality: { greater_than: 0, message: "請輸入商品售價，必須大於零" }
-  validates :quantity, presence: { message: "請入庫存數量" }, numericality: { greater_than_or_equal: 0 }
-  validates :category_id, presence: { message: "請選擇商品分類" }
+  validates :title, presence: { message: "请输入商品名称" }
+  validates :price, presence: { message: "请输入商品售价" }
+  validates :price, numericality: { greater_than: 0, message: "请输入商品售价，必须大于零" }
+  validates :quantity, presence: { message: "请输入库存数量" }, numericality: { greater_than_or_equal: 0 }
+  validates :category_id, presence: { message: "请选择商品分类" }
 
 
   # 關聯 #
@@ -56,6 +56,4 @@ class Product < ApplicationRecord
   scope :published, -> { where(is_hidden: false) }
   scope :recent, -> { order('created_at DESC') }
   scope :random3, -> { limit(3).order('RANDOM()') }
-
-
 end

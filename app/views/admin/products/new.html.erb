@@ -1,11 +1,11 @@
-<div class="row", style="margin-left: -200px;">
+<!-- <div class="row", style="margin-left: -200px;">
   <br>
   <br>
   <br>
   <br>
   <div class="col-md-10 col-md-offset-1">
     <h2> New Product </h2>
-  
+
     <%= simple_form_for [:admin, @product] do |f| %>
       <div class="group">
         <%= f.input :title %>
@@ -25,4 +25,8 @@
       <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
     <% end %>
   </div>
-</div>
+</div> -->
+
+<!--=== 新增商品 ===-->
+<h2><span class="fa fa-file-text-o"></span> <%= t('product-new') %></h2>
+<%= render('form') %>

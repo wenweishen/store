@@ -1,4 +1,4 @@
-<div class="row", style="margin-left: -200px;">
+<!-- <div class="row", style="margin-left: -200px;">
   <br>
   <br>
   <br>
@@ -47,5 +47,93 @@
         <% end %>
       </tbody>
     </table>
+  </div>
+</div> -->
+
+<!--=== 頁面標題 ===-->
+<h2><%= t('product-index') %></h2>
+
+<!--=== 新增商品 ===-->
+<div class='pull-right'>
+  <%= link_to(t('btn-product-new'), new_admin_product_path, :class => 'btn btn-md btn-info')%>
+</div>
+
+<!--=== 商品列表 ===-->
+<table class='table table-hover'>
+  <!--=== 商品列表標題 ===-->
+  <thead>
+    <tr>
+      <th><%= t('f-product-name') %></th>
+      <th><%= t('f-product-category') %></th>
+      <th><%= t('f-category-group') %></th>
+      <th><%= t('f-product-price') %></th>
+      <th><%= t('f-product-quantity') %></th>
+      <th><%= t('f-options') %></th>
+    </tr>
+  </thead>
+
+  <!--=== 商品列表內容 ===-->
+  <% @products.each do |product| %>
+    <tr>
+      <td>
+        <%= render_product_status(product) %>
+        <%= link_to(product.title, admin_product_path(product)) %>
+        <%= render_product_chosen_status(product) %>
+      </td>
+      <td><%= product.category.title %></td>
+      <td><%= product.category.category_group.title %></td>
+      <td>$ <%= product.price %></td>
+      <td><%= product.quantity %></td>
+
+      <!--=== 操作選項 ===-->
+      <td>
+        <div class="action-box">
+
+        <!-- edit按钮 -->
+        <%= link_to(edit_admin_product_path(product), class: "btn btn-md btn-default") do %>
+          <span class="fa fa-pencil"></span>
+        <% end %>
+
+        <!-- 发布 / 隐藏 -->
+        <!-- <%= render_product_publish_or_hide(product) %> -->
+        <% if product.is_hidden %>
+          <%= link_to(publish_admin_product_path(product), :method => :post, class: "btn btn-md btn-default show-btn") do %>
+            <span class="fa fa-eye"></span>
+          <% end %>
+        <% else %>
+          <%= link_to(hide_admin_product_path(product), :method => :post, data: { confirm: "確定隱藏該商品？" }, class: "btn btn-md btn-default") do %>
+            <span class="fa fa-eye-slash"></span>
+          <% end %>
+        <% end %>
+
+        <!-- 精選商品 -->
+        <% if product.is_chosen %>
+          <%= link_to(chosen_admin_product_path(product), :method => :post, class: "btn btn-md btn-default show-btn") do %>
+            <span class="fa fa-heart"></span>
+          <% end %>
+        <% else %>
+          <%= link_to(chosen_admin_product_path(product), :method => :post, class: "btn btn-md btn-default") do %>
+            <span class="fa fa-heart-o"></span>
+          <% end %>
+        <% end %>
+
+        <!-- 删除商品 -->
+
+        <%= link_to(product_path(product), :method => :delete, class: "btn btn-md btn-default", :data => { :confirm => "Are you sure?" }) do %>
+        <span class="fa fa-trash-o"></span>
+        <% end %>
+
+
+        </div>
+      </td>
+
+    </tr>
+  <% end %>
+</table>
+
+
+<div class="col-md-12 admin-page-box">
+  <div class="text-center">
+    <%= will_paginate @products, renderer: BootstrapPagination::Rails, :previous_label => t('previous-label'), :next_label => t('next-label') %>
   </div>
 </div>

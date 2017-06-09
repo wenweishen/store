@@ -83,4 +83,12 @@ def remove_from_wish_list
 end
 
 
+# 删除商品
+ def destroy
+    @product = Product.find(params[:id])
+    @product.destroy
+    flash[:alert] = "Product Deleted"
+    redirect_to admin_products_path
+ end
+
 end
