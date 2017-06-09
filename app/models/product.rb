@@ -18,12 +18,12 @@ class Product < ApplicationRecord
   has_many :wish_lists
   has_many :wish_list_owners, :through => :wish_lists, :source => :user
 
-  
+
 
   # 商品資訊網址優化 #
-  # def to_param
-  #   "#{self.id}-#{self.name.gsub(/\s+/, "")}"
-  # end
+  def to_param
+    "#{self.id}-#{self.title.gsub(/\s+/, "")}"
+  end
 
   # 發佈 / 隱藏 #
   def publish!
