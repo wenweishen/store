@@ -2,7 +2,11 @@
   <div class='container'>
     <!--=== 商品類型 & 品牌選單 ===-->
     <%= image_tag(@product.category.category_group.image, class: 'background-image') %>
-    <%= render 'products/menu' %>
+    <br>
+    <hr>
+    <br>
+    <hr>
+    <br>
 
     <!-- 如果商品是上架狀態 -->
     <% if !@product.hidden?  %>
