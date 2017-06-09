@@ -1,6 +1,6 @@
 zh-CN:
 #--=== web-name ===--#
-  web-name: Big Bang Board Game
+  web-name: BigBangBoardGame
   web-name-min: BBBG
 
 #--=== Devise 相关 ===--#
@@ -11,7 +11,7 @@ zh-CN:
       invalid: 帐号或密码输入错误。
     sessions:
       signed_in: 登入成功，欢迎回来！
-      signed_out: 登出成功。
+      signed_out: 登出成功
 
   dv-warn-email: 请输入您的电子信箱。
   dv-warn-name: 请输入用户名称。
@@ -65,7 +65,7 @@ zh-CN:
 
   # 加入我们 #
   guide:
-  guide-plus: 
+  guide-plus:
 
   # 商品分类 #
   th-first: 欢乐聚会游戏
