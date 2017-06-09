@@ -1,11 +1,11 @@
 zh-CN:
 #--=== web-name ===--#
-  web-name: 个性定制桌游
+  web-name: Big Bang Board Game
 
 #--=== Devise 相关 ===--#
   devise:
     failure:
-      unauthenticated: 您必须是 J&A SELECT 用户才能进行操作。
+      unauthenticated: 您必须是 BBBG 用户才能进行操作。
       not_found_in_database: 此帐号不存在。
       invalid: 帐号或密码输入错误。
     sessions:
@@ -15,7 +15,7 @@ zh-CN:
   dv-warn-email: 请输入您的电子信箱。
   dv-warn-name: 请输入用户名称。
   dv-warn-pwd: 密码不相符，请再次确认。
-  dv-warn-pwd-characters: 请输入 6 到 16 字元的密码。
+  dv-warn-pwd-characters: 请输入 6 到 16 字位的密码。
 
   dv-login: 登入
   dv-signup: 注册
@@ -26,8 +26,8 @@ zh-CN:
   dv-check-email: you@example.com
   dv-name: 用户名称
   dv-find-pwd: 取得密码
-  dv-account-signin: 已经是 J&A SELECT 用户了吗？按此登入。
-  dv-no-account-signup: 现在就加入 J&A SELECT。
+  dv-account-signin: 已经是 BBBG 用户了吗？按此登入
+  dv-no-account-signup: 现在就加入 BBBG
   dv-user: 人才
   dv-admin: 企业
   dv-set-pwd: 设定 6 到 16 字位密码
@@ -39,7 +39,7 @@ zh-CN:
   message-confirm-clear-cart: 您确定要清空整个购物车吗？
   message-clear-cart-success: 已清空购物车。
   message-payment-success: 已完成付款。
-  message-cancel-request-sent: 已提交申请，J&A SELECT 会尽速与您联系。
+  message-cancel-request-sent: 已提交申请，BBBG 会尽速与您联系。
 
 #--=== 首页 ===--#
 
