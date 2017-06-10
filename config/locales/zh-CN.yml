@@ -1,7 +1,7 @@
 zh-CN:
 #--=== web-name ===--#
-  web-name: 定制桌游
-  web-name-min: BG
+  web-name: 时光桌游
+  web-name-min: TimeStory
 
 #--=== Devise 相关 ===--#
   devise:
