@@ -6,7 +6,7 @@ zh-CN:
 #--=== Devise 相关 ===--#
   devise:
     failure:
-      unauthenticated: 您必须是 BG 用户才能进行操作。
+      unauthenticated: 您必须是 TimeStory 用户才能进行操作。
       not_found_in_database: 此帐号不存在。
       invalid: 帐号或密码输入错误。
     sessions:
@@ -40,7 +40,7 @@ zh-CN:
   message-confirm-clear-cart: 您确定要清空整个购物车吗？
   message-clear-cart-success: 已清空购物车。
   message-payment-success: 已完成付款。
-  message-cancel-request-sent: 已提交申请，BBBG 会尽速与您联系。
+  message-cancel-request-sent: 已提交申请，TimeStory 会尽速与您联系。
 
 #--=== 首页 ===--#
 
@@ -57,11 +57,11 @@ zh-CN:
 
   # 大图滚动banner 代码块 #
   slogan-1: 个性化定制桌游
-  slogan-plus-1: 结合社交媒体数据
-  slogan-2: 帮你记录
-  slogan-plus-2: 与家人和朋友在一起的美好时光
-  slogan-3: 让我们的生活
-  slogan-plus-3: 更有趣味
+  slogan-plus-1: 记录你生活中的美好瞬间，生成个性化桌游故事卡牌
+  slogan-2: 结合社交媒体数据
+  slogan-plus-2: 帮你记录与家人和朋友在一起的美好时光
+  slogan-3: 让我们用一种更有趣的方式
+  slogan-plus-3: 不断复盘人生
 
   # 加入我们 #
   guide:
