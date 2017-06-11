@@ -15,11 +15,12 @@ end
 
 def new
   @product = Product.new
-  # 商品图片
+  # 商品多图上传
   @product_image = @product.product_images.build
   # 商品所属的分类
-  @categories = Category.all.order("category_group_id, title")
+  @categories = Category.all.map { |c| [c.title, c.id] } #这一行为加入的代码
 end
+
 
 def create
   @product = Product.new(product_params)
@@ -30,7 +31,7 @@ def create
         @product_image = @product.product_images.create(:image => i)
       end
     end
-    redirect_to admin_products_path
+    redirect_to admin_products_path, alert: "添加商品成功"
   else
     render :new
   end
@@ -41,21 +42,20 @@ end
    @product = Product.find(params[:id])
 
    # 商品所属的分类
-   @categories = Category.all.order("category_group_id, title")
+   @categories = Category.all.map { |c| [c.title, c.id] } #这一行为加入的代码
  end
 
  def update
    @product = Product.find(params[:id])
     # 商品图片
    if params[:product_images] != nil
-
-     #删除旧图
-     @product.product_images.destroy_all
+     @product.product_images.destroy_all  #需要先删除旧图
 
      params[:product_images]['image'].each do |i|
        @product_image = @product.product_images.create(:image => i)
      end
      @product.update(product_params)
+     redirect_to admin_products_path
 
    elsif @product.update(product_params)
      redirect_to admin_products_path and return

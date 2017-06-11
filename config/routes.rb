@@ -20,9 +20,11 @@ end
 # 商品 #
 resources :products do
    member do
-     post :add_to_cart
-     post :add_to_wish_list
-     post :remove_from_wish_list
+     post :buy_now #立即购买路径
+     post :add_to_cart  #加入购物车
+     post :add_to_wish_list  #收藏商品功能
+     post :remove_from_wish_list #取消收藏功能
+     put "like", to: "products#upvote"  #点赞功能
      post :setup_currency
    end
 

@@ -16,7 +16,7 @@
 #
 
 class Product < ApplicationRecord
-  mount_uploader :image, ImageUploader
+
   # 新增/修改欄位限制與提示 #
   validates :title, presence: { message: "请输入商品名称" }
   validates :price, presence: { message: "请输入商品售价" }
@@ -25,12 +25,13 @@ class Product < ApplicationRecord
   validates :category_id, presence: { message: "请选择商品分类" }
 
 
-  # 關聯 #
+  # 关联 #
   belongs_to :category
   has_one :order_item
 
-  has_many :product_images, dependent: :destroy
-  accepts_nested_attributes_for :product_images
+
+  has_many :product_images, dependent: :destroy # 多图上传 #
+  accepts_nested_attributes_for :product_images # 多图上传 #
 
   has_many :wish_lists
   has_many :wish_list_owners, :through => :wish_lists, :source => :user
