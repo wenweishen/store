@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: category_groups
+#
+#  id         :integer          not null, primary key
+#  title      :string
+#  is_hidden  :boolean          default(FALSE)
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 class CategoryGroup < ApplicationRecord
   # 新增/修改栏位限制与提示 #
   validates :title, presence: true

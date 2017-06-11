@@ -48,7 +48,7 @@ gem 'font-awesome-rails' #font-awesome-rails图标
 #邮件系统
 gem 'letter_opener', group: :development
 
-# 圖片功能
+# 图片功能
 gem 'carrierwave'
 gem 'mini_magick'
 
@@ -68,6 +68,9 @@ gem "devise-i18n"
 
 # Intercom 客服系統
 # gem 'intercom-rails'
+
+# 每个model的上方，有schema的对应部分
+gem 'annotate'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

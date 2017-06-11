@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: categories
+#
+#  id                :integer          not null, primary key
+#  title             :string
+#  category_group_id :integer
+#  is_hidden         :boolean          default(FALSE)
+#  created_at        :datetime         not null
+#  updated_at        :datetime         not null
+#
+
 class Category < ApplicationRecord
   # 新增/修改栏位限制与提示 #
   validates :title, presence: { message: "请输入分类名称" }

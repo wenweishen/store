@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: intros
+#
+#  id         :integer          not null, primary key
+#  title      :string
+#  content    :string
+#  image      :string
+#  link       :string
+#  is_hidden  :boolean          default(FALSE)
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 class Intro < ApplicationRecord
 # 新增/修改欄位限制與提示 #
 validates :title, presence: true

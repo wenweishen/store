@@ -111,7 +111,7 @@ end
 private
 
 def product_params
-  params.require(:product).permit(:title, :description, :price, :quantity, :category_id, :is_hidden, :is_chosen)
+  params.require(:product).permit(:title, :description, :price, :quantity, :category_id, :is_hidden, :is_chosen, :image)
 end
 
 end

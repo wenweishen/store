@@ -1,3 +1,19 @@
+# == Schema Information
+#
+# Table name: articles
+#
+#  id          :integer          not null, primary key
+#  image       :string
+#  title       :string
+#  description :text
+#  user_id     :integer
+#  position    :integer
+#  is_hidden   :boolean          default(TRUE)
+#  summary     :text
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
 class Article < ApplicationRecord
   mount_uploader :image, ImageUploader
 #  acts_as_list
