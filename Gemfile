@@ -43,7 +43,7 @@ gem 'font-awesome-rails' #font-awesome-rails图标
 # gem 'masonry-rails'
 
 # 社群分享
-# gem 'social-share-button'
+gem 'social-share-button'
 
 #邮件系统
 gem 'letter_opener', group: :development

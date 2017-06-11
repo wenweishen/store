@@ -14,8 +14,8 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap
-//= require bootstrap/alert
-
+//= require social-share-button
+//= require social-share-button/wechat
 //= require_tree .
 
 $(window).scroll(function () {

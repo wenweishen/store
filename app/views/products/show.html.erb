@@ -94,7 +94,9 @@
               <% end %>
             </div>
             <!-- 分享功能 先略去，后面补上-->
-            <div class='right-box share'></div>
+            <div class='right-box share'>
+               <%= social_share_button_tag(@product.title, :allow_sites => %w(facebook twitter google_plus wechat weibo), :image => @product_images.first.image.main.url , desc: @product.description) %>
+            </div>
           <!--=== 如果庫存數量大於零 ===-->
           <% if @orderSum < @product.quantity && @product.quantity > 0 %>
             <!-- 加入購物車 -->
