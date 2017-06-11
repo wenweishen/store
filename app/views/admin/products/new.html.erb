@@ -1,32 +1,29 @@
-<!-- <div class="row", style="margin-left: -200px;">
-  <br>
-  <br>
-  <br>
-  <br>
-  <div class="col-md-10 col-md-offset-1">
-    <h2> New Product </h2>
-
+<div class="col-md-10 col-centered">
+  <div class="panel-default">
+    <div class="panel-heading">
+      <p>添加新商品</p>
+    </div>
+    <div class="panel-body">
     <%= simple_form_for [:admin, @product] do |f| %>
+      <%= f.input :title, :label => "商品名", placeholder: "名称" %>
+      <%= f.input :description, :label => "商品描述", placeholder: "商品描述", input_html: { :wrap => :soft, :rows => 5} %>
+      <%= f.input :price, :label => "价格", placeholder: "价格" %>
+      <%= f.input :quantity, :label => "库存", placeholder: "库存" %>
+      <!-- <%= f.input :image, :label => "图片", placeholder: "图片", as: :file %> -->
       <div class="group">
-        <%= f.input :title %>
+        <%#= f.input :image, as: :file %>
+        <%= f.label :商品展示图片 %><br>
+        <%= f.file_field :avatar, :multiple => true, name: "photos[avatar][]" %>
       </div>
       <div class="group">
-        <%= f.input :description %>
+        <%#= f.input :image, as: :file %>
+        <%= f.label :商品详情区域图片 %><br>
+        <%= f.file_field :avatar, :multiple => true, name: "pictures[avatar][]" %>
       </div>
-      <div class="group">
-        <%= f.input :quantity %>
-      </div>
-      <div class="group">
-        <%= f.input :price %>
-      </div>
-      <div class="group">
-        <%= f.input :image, as: :file %>
-      </div>
-      <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
+
+      <%= select_tag(:category_id, options_for_select(@categories), :prompt => "类别") %> <!-- 新增类别 -->
+      <%= f.submit "提交", class: "btn btn-primary", data: { disable_with: "提交。。。"} %>
     <% end %>
   </div>
-</div> -->
-
-<!--=== 新增商品 ===-->
-<h2><span class="fa fa-file-text-o"></span> <%= t('product-new') %></h2>
-<%= render('form') %>
+</div>
+</div>
