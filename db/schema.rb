@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170611063605) do
+ActiveRecord::Schema.define(version: 20170614101616) do
 
   create_table "article_collections", force: :cascade do |t|
     t.integer  "article_id"
@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(version: 20170611063605) do
     t.boolean  "is_hidden",  default: false
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
+    t.string   "image"
   end
 
   create_table "currencies", force: :cascade do |t|
@@ -138,6 +139,8 @@ ActiveRecord::Schema.define(version: 20170611063605) do
     t.boolean  "is_hidden",   default: false
     t.integer  "category_id"
     t.boolean  "is_chosen",   default: false
+    t.string   "friendly_id"
+    t.index ["friendly_id"], name: "index_products_on_friendly_id", unique: true
   end
 
   create_table "users", force: :cascade do |t|

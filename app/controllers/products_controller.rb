@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
-  before_action :authenticate_user!, only: [:add_to_wish_list, :remove_from_wish_list]
-  before_action :validate_search_key, only: [:search]
+#  before_action :authenticate_user!, only: [:add_to_wish_list, :remove_from_wish_list]
+#  before_action :validate_search_key, only: [:search]
 
 
    def index
@@ -34,7 +34,8 @@ class ProductsController < ApplicationController
    end
 
   def show
-    @product = Product.find(params[:id])
+  
+    @product = Product.find_by_friendly_id!(params[:id])
     @product_images = @product.product_images.all
     @orderSum = OrderItem.where("product_id" => @product.id).sum(:quantity)
     @product_stock = @product.quantity - @orderSum

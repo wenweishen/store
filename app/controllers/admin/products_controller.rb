@@ -8,7 +8,7 @@ def index
 end
 
 def show
-  @product = Product.find(params[:id])
+  @product = Product.find_by_friendly_id!(params[:id])
   # 商品图片
   @product_images = @product.product_images.all
 end
@@ -40,14 +40,14 @@ end
 
 
  def edit
-   @product = Product.find(params[:id])
+   @product = Product.find_by_friendly_id!(params[:id])
 
    # 商品所属的分类
    @categories = Category.all.map { |c| [c.title, c.id] } #这一行为加入的代码
  end
 
  def update
-   @product = Product.find(params[:id])
+   @product = Product.find_by_friendly_id!(params[:id])
     # 商品图片
    if params[:product_images] != nil
      @product.product_images.destroy_all  #需要先删除旧图
@@ -104,7 +104,7 @@ end
 
 # 删除商品
  def destroy
-    @product = Product.find(params[:id])
+    @product = Product.find_by_friendly_id!(params[:id])
     @product.destroy
     flash[:alert] = "Product Deleted"
     redirect_to admin_products_path  #删除后返回后台产品列表
@@ -114,7 +114,7 @@ end
 private
 
 def product_params
-  params.require(:product).permit(:title, :description, :price, :quantity, :category_id, :is_hidden, :is_chosen, :image)
+  params.require(:product).permit(:title, :description, :price, :quantity, :category_id, :is_hidden, :is_chosen, :image, :friendly_id)
 end
 
 end
