@@ -4,26 +4,36 @@
       <p>添加新商品</p>
     </div>
     <div class="panel-body">
-    <%= simple_form_for [:admin, @product] do |f| %>
-      <%= f.input :title, :label => "商品名", placeholder: "名称" %>
-      <%= f.input :description, :label => "商品描述", placeholder: "商品描述", input_html: { :wrap => :soft, :rows => 5} %>
-      <%= f.input :price, :label => "价格", placeholder: "价格" %>
-      <%= f.input :quantity, :label => "库存", placeholder: "库存" %>
-      <!-- <%= f.input :image, :label => "图片", placeholder: "图片", as: :file %> -->
-      <div class="group">
-        <%#= f.input :image, as: :file %>
-        <%= f.label :商品展示图片 %><br>
-        <%= f.file_field :avatar, :multiple => true, name: "photos[avatar][]" %>
-      </div>
-      <div class="group">
-        <%#= f.input :image, as: :file %>
-        <%= f.label :商品详情区域图片 %><br>
-        <%= f.file_field :avatar, :multiple => true, name: "pictures[avatar][]" %>
-      </div>
+      <%= simple_form_for [:admin, @product] do |f| %>
+       <!-- 商品名稱 -->
+        <%= f.input :title, :label => "商品名", placeholder: "名称" %>
+         <!-- 商品敘述 -->
+        <%= f.input :description, :label => "商品描述", placeholder: "商品描述", input_html: { :wrap => :soft, :rows => 5} %>
+        <!-- 商品售價 -->
+        <%= f.input :price, :label => "价格", placeholder: "价格" %>
+         <!-- 商品庫存數量 -->
+        <%= f.input :quantity, :label => "库存", placeholder: "库存" %>
+        <!-- 選擇分類 -->
+        <%= f.input :category_id, :label => t('f-product-category'), :collection => @categories, :checked => @product.category, input_html: { class: 'width-50' } %>
+         <!-- 上傳圖片 -->
+        <!-- <%= f.input :image, :label => "图片", placeholder: "图片", as: :file %> -->
+        <div class="group">
+          <%#= f.input :image, as: :file %>
+          <%= f.label :商品展示图片 %><br>
+          <%= f.file_field :image, :multiple => true, name: "product_images[image][]" %>
+        </div>
+        <div class="group">
+          <%#= f.input :image, as: :file %>
+          <%= f.label :商品详情区域图片 %><br>
+          <%= f.file_field :image, :multiple => true, name: "product_images[image][]" %>
+        </div>
+        <!-- 商品精选與否 -->
+<span class="hidden-box"><%= f.input :is_chosen, :label => t('f-product-chosen') %></span>
 
-      <%= select_tag(:category_id, options_for_select(@categories), :prompt => "类别") %> <!-- 新增类别 -->
-      <%= f.submit "提交", class: "btn btn-primary", data: { disable_with: "提交。。。"} %>
-    <% end %>
+<!-- 商品隱藏與否 -->
+<span class="hidden-box"><%= f.input :is_hidden, :label => t('f-hide') %></span>
+        <%= f.submit "提交", class: "btn btn-primary", data: { disable_with: "提交。。。"} %>
+      <% end %>
+    </div>
   </div>
-</div>
 </div>

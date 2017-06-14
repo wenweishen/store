@@ -7,11 +7,13 @@ class IntroUploader < CarrierWave::Uploader::Base
   # Choose what kind of storage to use for this uploader:
   # storage :file
   # storage :fog
+
   if Rails.env.production?
-    storage :qiniu # 正式端
+    storage :fog # 正式端
   else
     storage :file # 本地端
   end
+
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir

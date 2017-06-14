@@ -95,8 +95,6 @@ end
     end
    end
 
-   # 品牌 #
-
    # 類型 #
    resources :category_groups do
      member do

@@ -18,19 +18,20 @@ def new
   # 商品多图上传
   @product_image = @product.product_images.build
   # 商品所属的分类
-  @categories = Category.all.map { |c| [c.title, c.id] } #这一行为加入的代码
+  @categories = Category.all.order("category_group_id, title")
+  # @categories = Category.all.map { |c| [c.title, c.id] } #这一行为加入的代码
 end
 
 
 def create
   @product = Product.new(product_params)
 
-  if @product.save
+  if @product.save!
     if params[:product_images] != nil
-      params[:product_images]['image'].each do |i|
+       params[:product_images]['image'].each do |i|
         @product_image = @product.product_images.create(:image => i)
-      end
     end
+  end
     redirect_to admin_products_path, alert: "添加商品成功"
   else
     render :new
@@ -73,6 +74,8 @@ end
    end
  end
 
+
+
  # 发布
  def publish
    @product = Product.find(params[:id])
@@ -104,7 +107,7 @@ end
     @product = Product.find(params[:id])
     @product.destroy
     flash[:alert] = "Product Deleted"
-    redirect_to products_path
+    redirect_to admin_products_path  #删除后返回后台产品列表
  end
 
 

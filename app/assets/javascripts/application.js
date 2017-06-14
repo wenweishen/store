@@ -16,8 +16,6 @@
 //= require social-share-button
 //= require social-share-button/wechat
 //= require bootstrap
-//= require social-share-button
-//= require social-share-button/wechat
 //= require_tree .
 
 $(window).scroll(function () {

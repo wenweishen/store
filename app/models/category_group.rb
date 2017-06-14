@@ -17,7 +17,7 @@ class CategoryGroup < ApplicationRecord
   has_many :categories
 
   #档案上传 #
-  mount_uploader :image, GroupUploader
+#  mount_uploader :image, GroupUploader
 
   # 发布 / 隐藏 #
   def publish!
