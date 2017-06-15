@@ -1,38 +1,29 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 zh-CN:
 #--=== web-name ===--#
   web-name: 时光桌游
-  web-name-min: TimeStory
 
 #--=== Devise 相关 ===--#
-  devise:
-    failure:
-      unauthenticated: 您必须是 TimeStory 用户才能进行操作。
-      not_found_in_database: 此帐号不存在。
-      invalid: 帐号或密码输入错误。
-    sessions:
-      signed_in: 登入成功，欢迎回来！
-      signed_out: 登出成功
-
-  dv-warn-email: 请输入您的电子信箱。
-  dv-warn-name: 请输入用户名称。
-  dv-warn-pwd: 密码不相符，请再次确认。
-  dv-warn-pwd-characters: 请输入 6 到 16 字位的密码。
-
-  dv-login: 登入
-  dv-signup: 注册
-  dv-email: 电子信箱
-  dv-pwd: 密码
-  dv-remember-me: 记住我
-  dv-forgot-pwd: 忘记密码？
-  dv-check-email: you@example.com
-  dv-name: 用户名称
-  dv-find-pwd: 取得密码
-  dv-account-signin: 已经是 BG 用户了吗？按此登入
-  dv-no-account-signup: 现在就加入 BG
-  dv-user: 人才
-  dv-admin: 企业
-  dv-set-pwd: 设定 6 到 16 字位密码
-  dv-confirm-pwd: 确认密码
 
 #--=== 提示讯息 ===--#
   message-add-to-cart-success: 成功加入购物车！
@@ -40,20 +31,9 @@ zh-CN:
   message-confirm-clear-cart: 您确定要清空整个购物车吗？
   message-clear-cart-success: 已清空购物车。
   message-payment-success: 已完成付款。
-  message-cancel-request-sent: 已提交申请，TimeStory 会尽速与您联系。
+  message-cancel-request-sent: 已提交申请，%{web-name}会尽速与您联系。
 
 #--=== 首页 ===--#
-
-  # 品牌故事 #
-  th-j-and-a-select: 为什么程序员命中注定应该玩桌游？
-  th-j-and-a: 因为气质匹配，相性相吸。
-
-  th-jimmy: 喜欢折腾自己，热衷学习各种玩意。写个博客还要在github上整个博客框架，没写两篇，觉得哪不对劲，非得再换个框架，花在搭博客上的时间比写博客还多。
-  about-jimmy: 桌游的生命力就在于永远不停的换新的玩，看看每年德国艾森桌游展（桌游厂家展示新桌游的重要展会）的火爆程度就知道啦~~
-
-
-  th-anndo: 守规矩，热爱条条框框。一个认真装逼的程序员，喜欢用各种规矩约束自己。写两行代码，非得考虑Coding Style；命名个变量，追求什么大小Camel，Hungarian命名法则；实现个功能逻辑，讲究Design Pattern；做个应用，不用各种Framework就浑身不对劲。管自己还不行，还要管别人。总之，不守规矩不舒服斯基。
-  about-anndo: 一般来说，多数同学，上来听了两分钟规则，就开始坐不住了，五分钟以后，已经摸出手机玩微信了，十分钟？不是掀桌就是睡过去了。碰上一个同学，不仅能耐心的听完半小时的规则，听完后还要指出有些细节没听明白，能不能再详细解释一下，没彻底搞清规则前，坚决不开始游戏，那十有八九，他就是个程序员！
 
   # 大图滚动banner 代码块 #
   slogan-1: 个性化定制桌游
@@ -128,13 +108,8 @@ zh-CN:
   nav-currency: 切换币值
   wish-list-remove: 已收藏
   btn-add-to-cart-none: 商品缺货
-  best-matches: J & A SELECT 推荐商品
+  #best-matches: %{web-name}推荐商品
 
-  product-brand: 品牌
-  product-size: 尺寸
-  product-material: 材质
-  product-country: 产地
-  product-color: 颜色
   product-quantity: 数量
   product-quantity-none: 没有库存
   product-chosen: 精选
@@ -157,7 +132,7 @@ zh-CN:
   btn-checkout: 前往结帐
 
   cart-no-data: 您尚未加入任何商品
-  cart-suggest: BG 诚挚向您推荐：
+  cart-suggest: "%{web-name}诚挚向您推荐："
 
 # 生成订单 #
   checkout-index: 订单资讯
@@ -199,13 +174,13 @@ zh-CN:
   cart: 购物车
   language: 语系
   product-access: 精选商品
-  brand-access: 品牌故事
   recommend-access: 热门推荐
   admin-access: 后台专区
   account-order-access: 历史订单
   user-center: 我的帐户
   user-order: 我的订单
   keywaods: 搜索商品
+  products_center: 商城
 
   # 后台操作面板 #
   admin-order: 订单管理
@@ -240,7 +215,7 @@ zh-CN:
   account-wish-list-index: 收藏清单
   btn-move-to-cart: 移动至购物车
   wish-no-data: 您尚未收藏任何商品。
-  wish-suggest: J & A SELECT 诚挚向您推荐：
+  wish-suggest: "%{web-name}诚挚向您推荐："
 
   # 历史订单 #
   account-order-index: 历史订单
@@ -296,20 +271,6 @@ zh-CN:
 
   cancelled: 此笔订单已取消
   returned: 此笔购买已退货
-
-
-
-  # 品牌管理 #
-  brand-index: 品牌一览
-  brand-new: 新增品牌
-  brand-edit: 编辑品牌
-
-  f-brand-name: 品牌名称
-  f-brand-logo: 品牌标志
-  f-brand-description: 品牌故事
-  f-brand-products: 品牌商品一览
-
-  btn-brand-new: 新增品牌
 
   # 类型管理 #
   category-group-index: 类型一览
