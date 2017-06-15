@@ -108,13 +108,14 @@ zh-CN:
   nav-currency: 切换币值
   wish-list-remove: 已收藏
   btn-add-to-cart-none: 商品缺货
-  #best-matches: %{web-name}推荐商品
+  best-matches: "%{web-name}推荐商品"
 
   product-quantity: 数量
+  product_stock: 库存数量
   product-quantity-none: 没有库存
   product-chosen: 精选
 
-  product-is-hidden: 这项商品已被下架。
+  product-is-hidden: 这项商品已被下架
   btn-continue: 继续购物
 
 #--=== 购物车 ===--#
@@ -306,12 +307,6 @@ zh-CN:
   f-product-price: 商品售价
   f-product-quantity: 库存数量
   f-product-category: 商品分类
-  f-product-brand: 商品品牌
-  f-product-color: 商品颜色
-  f-specification: 商品规格
-  f-product-size: 商品尺寸
-  f-product-material: 商品材质
-  f-product-country: 商品产地
   f-product-chosen: 精选商品
 
   btn-product-new: 新增产品

@@ -39,8 +39,8 @@
               <div class="left-box">
                 <h3><%= render_product_price(@product) %></h3>
               </div>
+                <!-- 币值转换 -->
               <div class="right-box currency">
-                <!-- 幣值轉換 -->
                 <%= render 'products/currency' %>
               </div>
             </div>
@@ -60,7 +60,7 @@
                     <%= link_to("+", "", id: "quantity-up", class: "quantity-actions") %>
                   </div>
                   <% if @product_stock <= 10 %>
-                    <span class="quantity-stock">(库存数量：<%= @product_stock %>)</span>
+                    <span class="quantity-stock">(<%=t('product_stock')%>：<%= @product_stock %>)</span>
                   <% end %>
                 </div>
                 <!--=== 如果沒有庫存 ===-->

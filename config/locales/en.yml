@@ -103,19 +103,20 @@ en:
   next-label: <span class="fa fa-angle-double-right"></span>
 
 #--=== 商品资讯页 ===--#
-  btn-add-to-cart: 加入购物车
-  wish-list-add: 加入收藏
-  nav-currency: 切换币值
-  wish-list-remove: 已收藏
-  btn-add-to-cart-none: 商品缺货
-#  best-matches: %{web-name}推荐商品
+  btn-add-to-cart: Add to Cart
+  wish-list-add: Add to Wishlist
+  nav-currency: Switch currency
+  wish-list-remove: Already in Wishlist
+  btn-add-to-cart-none: Out of Stock
+  best-matches: "%{web-name} recommend"
 
-  product-quantity: 数量
-  product-quantity-none: 没有库存
-  product-chosen: 精选
+  product-quantity: Quantity
+  product_stock: Stock
+  product-quantity-none: Out of stock
+  product-chosen: Featured
 
-  product-is-hidden: 这项商品已被下架。
-  btn-continue: 继续购物
+  product-is-hidden: Shelved
+  btn-continue: Go on shopping
 
 #--=== 购物车 ===--#
   # 购物车 #
@@ -306,12 +307,6 @@ en:
   f-product-price: 商品售价
   f-product-quantity: 库存数量
   f-product-category: 商品分类
-  f-product-brand: 商品品牌
-  f-product-color: 商品颜色
-  f-specification: 商品规格
-  f-product-size: 商品尺寸
-  f-product-material: 商品材质
-  f-product-country: 商品产地
   f-product-chosen: 精选商品
 
   btn-product-new: 新增产品
