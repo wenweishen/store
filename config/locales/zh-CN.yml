@@ -169,16 +169,17 @@ zh-CN:
   signup: 注册
   login: 登入
   logout: 登出
-  greeting: 您好，
+  greeting: 您好！
   wish-list: 收藏
   cart: 购物车
   language: 语系
-  product-access: 精选商品
-  recommend-access: 热门推荐
+#  product-access: 精选商品
+#  recommend-access: 热门推荐
   admin-access: 后台专区
   account-order-access: 历史订单
   user-center: 我的帐户
   user-order: 我的订单
+  personal center: 个人中心
   keywaods: 搜索商品
   products_center: 商城
 
