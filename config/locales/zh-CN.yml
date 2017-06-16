@@ -113,7 +113,7 @@ zh-CN:
   product-quantity: 数量
   product_stock: 库存数量
   product-quantity-none: 没有库存
-  product-chosen: 精选
+#  product-chosen: 精选
 
   product-is-hidden: 这项商品已被下架
   btn-continue: 继续购物
@@ -304,8 +304,8 @@ zh-CN:
   f-product-images: 商品图片
   f-product-name: 商品名称
   f-product-description: 商品介绍
-  f-product-price: 商品售价
-  f-product-quantity: 库存数量
+  f-product-price: 商品价格
+  f-product-quantity: 库存
   f-product-category: 商品分类
   f-product-chosen: 精选商品
 

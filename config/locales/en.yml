@@ -113,7 +113,7 @@ en:
   product-quantity: Quantity
   product_stock: Stock
   product-quantity-none: Out of stock
-  product-chosen: Featured
+#  product-chosen: Featured
 
   product-is-hidden: Shelved
   btn-continue: Go on shopping

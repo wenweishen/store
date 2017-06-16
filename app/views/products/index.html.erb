@@ -13,21 +13,30 @@
         <% @products.each_with_index do |product, index| %>
           <div class='col-xs-12 col-sm-4 col-md-3 product-content'>
             <%= link_to product_path(product) do %>
+
               <!-- 商品图片 -->
               <% if product.product_images.present? %>
                 <!-- 显示第一张图片 -->
+
+                <!-- 产品是否精选 -->
                 <% if product.is_chosen %>
-                  <div class="chosen-box"><%= t('product-chosen') %></div>
+                  <div class="chosen-box">
+                  <%= t('product-chosen') %>
+                </div>
                 <% end %>
+
                 <%= image_tag(product.product_images[0].image.thumb.url, class: 'thumbnail')%>
+
               <% else %>
                 <%= image_tag('http://placehold.it/200x200&text=No Pic', class: 'thumbnail') %>
               <% end %>
             <% end %>
+            <!-- 商品信息 -->
             <div class="product-info">
-              <p><%= link_to(product.title , product_path(product)) %></p>
+              <p><%= link_to(product.title, product_path(product)) %></p>
               <p><%= render_product_price(product) %></p>
             </div>
+
           </div>
         <% end %>
       </div>

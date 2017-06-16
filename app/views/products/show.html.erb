@@ -8,7 +8,7 @@
     <br>
     <!-- 如果商品是上架狀態 -->
     <% if !@product.hidden?  %>
-      <!-- 商品圖片 -->
+      <!-- 商品图片 -->
       <div class='col-xs-12 col-md-8 product-image'>
         <div class='row'>
           <% if @product_images.present? %>
@@ -19,8 +19,8 @@
               <% end %>
               <%= image_tag(@product_images.first.image.medium.url, class: 'main-image thumbnail') %>
             </div>
+            <!-- 顯示所有商品圖片 - other 尺寸小圖 -->
             <% @product_images.each_with_index do |p| %>
-              <!-- 顯示所有商品圖片 - other 尺寸小圖 -->
               <div class='col-md-2 col-sm-4 col-xs-6 image-box'>
                 <%= image_tag(p.image.thumb.url, class: 'list-image thumbnail') %>
               </div>
@@ -30,7 +30,7 @@
           <% end %>
         </div>
       </div>
-      <!--=== 商品資訊 ===-->
+      <!--=== 商品资讯 ===-->
       <%= form_tag add_to_cart_product_path(@product), :method => :post, :remote => true do %>
         <div class='col-xs-12 col-md-4 product-detail'>
           <div>
@@ -39,75 +39,78 @@
               <div class="left-box">
                 <h3><%= render_product_price(@product) %></h3>
               </div>
-                <!-- 币值转换 -->
+              <!-- 币值转换 -->
               <div class="right-box currency">
                 <%= render 'products/currency' %>
               </div>
             </div>
+            <!-- 产品介绍 -->
             <p><%= simple_format(@product.description) %></p>
           </div>
-          <hr />
-          <div>
-            <br/>
-            <p>
-              <!--=== 如果庫存數量大於零 ===-->
-              <% if @orderSum < @product.quantity && @product.quantity > 0 %>
-                <div class="quantity-box">
-                  <div class="left-box"><%= t('product-quantity') %>：</div>
-                  <div class="left-box quantity-button">
-                    <%= link_to("-", "", id: "quantity-down", class: "quantity-actions") %>
-                    <input type="text" name="quantity" value="1" id="quantity" max="<%= @product.quantity - @orderSum %>" class="quantity-input">
-                    <%= link_to("+", "", id: "quantity-up", class: "quantity-actions") %>
-                  </div>
-                  <% if @product_stock <= 10 %>
-                    <span class="quantity-stock">(<%=t('product_stock')%>：<%= @product_stock %>)</span>
-                  <% end %>
-                </div>
-                <!--=== 如果沒有庫存 ===-->
-              <% else %>
-                <div class="quantity-box">
-                  <%= t('product-quantity') %>：<span class="quantity-none"><%= t('product-quantity-none') %></span>
-                </div>
-              <% end %>
-            </p>
-          </div>
-          <hr />
-          <div class='row'>
-            <!-- 收藏 & 分享 -->
-            <div class='left-box wish'>
-              <% if current_user && current_user.is_wish_list_owner_of?(@product) %>
-                <%= link_to remove_from_wish_list_product_path(@product), method: :post do %>
-                  <i class='fa fa-check fa-fw'> </i><%= t('wish-list-remove') %>
-                <% end %>
-              <% else %>
-                <%= link_to add_to_wish_list_product_path(@product), method: :post do %>
-                  <i class='fa fa-plus fa-fw'> </i><%= t('wish-list-add') %>
-                <% end %>
-              <% end %>
-            </div>
-            <!-- 分享功能 先略去，后面补上-->
+          <hr/>
+        </div>
+        <br/>
+        <div>
+          <p>
             <!--=== 如果庫存數量大於零 ===-->
             <% if @orderSum < @product.quantity && @product.quantity > 0 %>
-              <!-- 加入購物車 -->
-              <button class="btn btn-md btn-default" type="submit">
-                <%= t('btn-add-to-cart')%>
-              </button>
+              <div class="quantity-box">
+                <div class="left-box"><%= t('product-quantity') %>：</div>
+                <div class="left-box quantity-button">
+                  <%= link_to("-", "", id: "quantity-down", class: "quantity-actions") %>
+                  <input type="text" name="quantity" value="1" id="quantity" max="<%= @product.quantity - @orderSum %>" class="quantity-input">
+                  <%= link_to("+", "", id: "quantity-up", class: "quantity-actions") %>
+                </div>
+                <% if @product_stock <= 10 %>
+                  <span class="quantity-stock">(<%=t('product_stock')%>：<%= @product_stock %>)</span>
+                <% end %>
+              </div>
               <!--=== 如果沒有庫存 ===-->
             <% else %>
-              <button class="btn btn-md btn-default" disabled="disabled" type="button">
-                <%= t('btn-add-to-cart-none')%>
-              </button>
+              <div class="quantity-box">
+                <%= t('product-quantity') %>：<span class="quantity-none"><%= t('product-quantity-none') %></span>
+              </div>
             <% end %>
-            <!-- 顯示隨機推薦商品 -->
+          </p>
+        </div>
+        <hr/>
+        <div class='row'>
+          <!-- 收藏 & 分享 -->
+          <div class='left-box wish'>
+            <% if current_user && current_user.is_wish_list_owner_of?(@product) %>
+              <%= link_to remove_from_wish_list_product_path(@product), method: :post do %>
+                <i class='fa fa-check fa-fw'> </i><%= t('wish-list-remove') %>
+              <% end %>
+            <% else %>
+              <%= link_to add_to_wish_list_product_path(@product), method: :post do %>
+                <i class='fa fa-plus fa-fw'> </i><%= t('wish-list-add') %>
+              <% end %>
+            <% end %>
           </div>
-        <% end %>
-        <!-- 如果商品是隱藏狀態 -->
-      <% else %>
-        <div class='buy-box'>
-          <h1><%= t('product-is-hidden') %></h1>
-          <br/>
-          <%= link_to(t('btn-continue'), products_path, class:'btn btn-lg btn-default' ) %>
+          <!-- 分享功能 先略去，后面补上-->
+          <!--=== 如果庫存數量大於零 ===-->
+          <% if @orderSum < @product.quantity && @product.quantity > 0 %>
+            <!-- 加入購物車 -->
+            <button class="btn btn-md btn-default" type="submit">
+              <%= t('btn-add-to-cart')%>
+            </button>
+            <!--=== 如果沒有庫存 ===-->
+          <% else %>
+            <button class="btn btn-md btn-default" disabled="disabled" type="button">
+              <%= t('btn-add-to-cart-none')%>
+            </button>
+          <% end %>
+          <!-- 顯示隨機推薦商品 -->
         </div>
       <% end %>
-    </div>
+      <!-- 如果商品是隱藏狀態 -->
+    <% else %>
+      <div class='buy-box'>
+        <h1><%= t('product-is-hidden') %></h1>
+        <br/>
+        <%= link_to(t('btn-continue'), products_path, class:'btn btn-lg btn-default' ) %>
+      </div>
+    <% end %>
   </div>
+</div>
+</div>
