@@ -34,7 +34,7 @@ class ProductsController < ApplicationController
    end
 
   def show
-  
+
     @product = Product.find_by_friendly_id!(params[:id])
     @product_images = @product.product_images.all
     @orderSum = OrderItem.where("product_id" => @product.id).sum(:quantity)
@@ -50,6 +50,15 @@ class ProductsController < ApplicationController
     # set_page_keywords    @product.title
     # set_page_image       @product_images.first.image.main.url
   end
+  
+  # 設定幣值
+  def setup_currency
+    set_currency
+
+    redirect_to :back
+  end
+
+
 
   # 加入购物车
   def add_to_cart

@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :set_locale
+  before_action :set_currency
   protect_from_forgery with: :exception
 
  def admin_required
@@ -21,6 +22,13 @@ class ApplicationController < ActionController::Base
     end
 
     I18n.locale = session[:locale] || I18n.default_locale
+  end
+
+  #设定币值
+  def set_currency
+    if params[:currency]
+      session[:currency] = params[:currency]
+    end
   end
 
  private
