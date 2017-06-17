@@ -222,8 +222,8 @@ Product.create!(
      )
 
   Product.create!(
-    title: 'Babel(通天塔)',
-    description: '最佳分手游戏',
+    title: 'Dixit（只言片语）',
+    description: 'DIXIT是一款法国游戏，08年由法国游戏公司Libellud首先发行。这款游戏发行不久便备受瞩目。法国画家Marie Cardouat设计的卡牌画面精致可爱，规则简单却充满无限的乐趣。',
     price: 300,
     quantity: 5,
     category_id: 1,

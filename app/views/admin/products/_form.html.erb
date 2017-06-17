@@ -12,7 +12,7 @@
     <div class='group'>
       <% if @product.product_images.present? %>
         <% @product.product_images.each do |p| %>
-          <%= image_tag p.image.other.url %>
+          <%= image_tag p.image.thumb.url %>
         <% end %>
       <% end %>
     </div>

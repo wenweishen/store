@@ -55,14 +55,16 @@ end
      params[:product_images]['image'].each do |i|
        @product_image = @product.product_images.create(:image => i)
      end
-     @product.update(product_params)
-     redirect_to admin_products_path
+
+    #  @product.update(product_params)
+    #  redirect_to admin_products_path
 
    elsif @product.update(product_params)
      redirect_to admin_products_path and return
    else
      render :edit
    end
+
    # 產品所属的分类
    @categories = Category.all.map { |c| [c.title, c.id] }
    @product.category_id = params[:category_id]
@@ -78,7 +80,7 @@ end
 
  # 发布
  def publish
-   @product = Product.find(params[:id])
+   @product = Product.find_by_friendly_id(params[:id])
    @product.publish!
    redirect_to :back
  end
