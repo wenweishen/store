@@ -85,14 +85,14 @@ end
 
  # 隐藏
  def hide
-   @product = Product.find(params[:id])
+   @product = Product.find_by_friendly_id(params[:id])
    @product.hide!
    redirect_to :back
  end
 
  # 精选商品
  def chosen
-   @product = Product.find(params[:id])
+   @product = Product.find_by_friendly_id(params[:id])
    if @product.is_chosen == true
      @product.no_chosen!
    else
