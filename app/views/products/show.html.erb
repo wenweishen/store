@@ -35,7 +35,7 @@
         <div class='col-xs-12 col-md-4 product-detail'>
           <div>
             <h1><%= @product.title %></h1>
-              <%= @product.created_at %>
+              <%= @product.created_at.to_s %>
             <div class="price">
               <div class="left-box">
                 <h3><%= render_product_price(@product) %></h3>
