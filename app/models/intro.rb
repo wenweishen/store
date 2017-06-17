@@ -19,7 +19,7 @@ validates :content, presence: true
 validates :link, presence: true
 
 # 檔案上傳 #
-mount_uploader :image, IntroUploader
+#mount_uploader :image, IntroUploader
 
 # Scope #
 scope :published, -> { where(is_hidden: false) }
