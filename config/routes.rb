@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-
+  resource :user
 
 #--=== 首頁 ===--#
 root 'welcome#index'

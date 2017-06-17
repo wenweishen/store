@@ -14,5 +14,6 @@ module Jdstore
 
     # 预设语系为简体中文
     config.i18n.default_locale = "zh-CN"
+    config.time_zone = "Beijing"
   end
 end
