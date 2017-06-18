@@ -6,7 +6,6 @@ class ProductsController < ApplicationController
    def index
      # 商品类型
      #@products = Product.all
-     @category_groups = CategoryGroup.published
 
      # 判斷是否篩選分類
      if params[:category].present?
@@ -50,7 +49,7 @@ class ProductsController < ApplicationController
     # set_page_keywords    @product.title
     # set_page_image       @product_images.first.image.main.url
   end
-  
+
   # 設定幣值
   def setup_currency
     set_currency

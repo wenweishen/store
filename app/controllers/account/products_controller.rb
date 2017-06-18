@@ -4,7 +4,7 @@ class Account::ProductsController < ApplicationController
   def index
     @products = current_user.wish_list_items
     # 商品類型
-    @category_groups = CategoryGroup.published
+    #@category_groups = CategoryGroup.published
   end
 
   # 从清单上删除该商品

@@ -30,8 +30,6 @@
       <%= link_to(product.title, admin_product_path(product)) %>
       <%= render_product_chosen_status(product) %>
       </td>
-      <td><%= product.category.title %></td>
-      <td><%= product.category.category_group.title %></td>
       <td>$ <%= product.price %></td>
       <td><%= product.quantity %></td>
       <!--=== 操作選項 ===-->

@@ -18,7 +18,7 @@ def new
   # 商品多图上传
   @product_image = @product.product_images.build
   # 商品所属的分类
-  @categories = Category.all.order("category_group_id, title")
+  #@categories = Category.all.order("category_group_id, title")
   # @categories = Category.all.map { |c| [c.title, c.id] } #这一行为加入的代码
 end
 
@@ -43,7 +43,7 @@ end
    @product = Product.find_by_friendly_id!(params[:id])
 
    # 商品所属的分类
-   @categories = Category.all.map { |c| [c.title, c.id] } #这一行为加入的代码
+   #@categories = Category.all.map { |c| [c.title, c.id] } #这一行为加入的代码
  end
 
  def update
