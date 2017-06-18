@@ -22,7 +22,7 @@ class Product < ApplicationRecord
   validates :price, presence: { message: "请输入商品售价" }
   validates :price, numericality: { greater_than: 0, message: "请输入商品售价，必须大于零" }
   validates :quantity, presence: { message: "请输入库存数量" }, numericality: { greater_than_or_equal: 0 }
-  validates :category_id, presence: { message: "请选择商品分类" }
+#  validates :category_id, presence: { message: "请选择商品分类" }
 
   #Product 改成可以自订 Model 网址
   before_validation :generate_friendly_id, :on => :create

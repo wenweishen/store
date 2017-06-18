@@ -41,7 +41,7 @@ class ProductsController < ApplicationController
 
 
     # 類型 / 幣值
-    @category_groups = CategoryGroup.published
+    #@category_groups = CategoryGroup.published
     @currencies = Currency.all
 
     # set_page_title       @product.title

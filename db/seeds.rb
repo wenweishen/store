@@ -103,90 +103,13 @@
 
     puts '创建广告*4'
 
-
-
-  # 新增类型  CategoryGroup#
-    CategoryGroup.create!(
-      title: '家人&朋友'
-    )
-
-    CategoryGroup.create!(
-      title: '同学&同事'
-    )
-
-    CategoryGroup.create!(
-      title: '公司文化&同行交流'
-    )
-
-    puts '创建类型*3：家人&朋友、同学&同事、公司文化&同行交流'
-
-  # 新增分類  Category #
-    # 家人&朋友
-    # 1
-    Category.create!(
-      category_group_id: 1,
-      title: '成长'
-    )
-
-    # 2
-    Category.create!(
-      category_group_id: 1,
-      title: '生日'
-    )
-
-    # 3
-    Category.create!(
-      category_group_id: 1,
-      title: '家庭大事记'
-    )
-
-    puts '创建「家人&朋友」分类*3：成长、生日、家庭大事记'
-
-    # 同学&同事
-    # 4
-    Category.create!(
-      category_group_id: 2,
-      title: '高中'
-    )
-
-    # 5
-    Category.create!(
-      category_group_id: 2,
-      title: '大学'
-    )
-
-    # 6
-    Category.create!(
-      category_group_id: 2,
-      title: '糗事一箩筐'
-    )
-
-    puts '创建「同学&同事」分类*3：高中、大学、糗事一箩筐'
-
-    # 公司文化&同行交流
-    # 7
-    Category.create!(
-      category_group_id: 3,
-      title: '团队建设'
-    )
-    # 8
-    Category.create!(
-      category_group_id: 3,
-      title: '行业大事记'
-    )
-
-    puts '创建「公司文化&同行交流」分类*2：团队建设、行业大事记'
-
-
-
-
 # 新增商品  Product #
 Product.create!(
    title: "权力的游戏-国王之手",
    description: "权力的游戏-国王之手，规则简单，画风犀利，轻度策略",
    price: 300,
    quantity: 5,
-   category_id: 1,
+#   category_id: 1,
    is_hidden: false
 #   image: open("https://ws4.sinaimg.cn/large/006tNbRwgy1fgashd7q13j309q0bf7ai.jpg"),
 )
@@ -196,7 +119,7 @@ Product.create!(
    description: "以美苏冷战为背景，玩家模拟美苏其中的一方，行走在核战危机的边缘，在全球范围内拓展自己的影响力",
    price: 300,
    quantity: 5,
-   category_id: 2,
+#   category_id: 2,
    is_hidden: false
 #   image: open("https://ws2.sinaimg.cn/large/006tNbRwgy1fgasnhlmb2j30m80m8gzm.jpg"),
 )
@@ -206,7 +129,7 @@ Product.create!(
    description: "文明背景的建设类游戏，曾经一度名列BGG游戏榜单前十",
    price: 300,
    quantity: 5,
-   category_id: 3,
+#   category_id: 3,
    is_hidden: false
 #   image: open("https://ws4.sinaimg.cn/large/006tNbRwgy1fgasqvoz9kj30k00jzqpp.jpg"),
 )
@@ -216,7 +139,7 @@ Product.create!(
      description: '最佳分手游戏',
      price: 300,
      quantity: 5,
-     category_id: 1,
+#     category_id: 1,
      is_hidden: false
 #     image: open("https://ws2.sinaimg.cn/large/006tNbRwgy1fgat3ncl2lj30dv0dwna0.jpg"),
      )
@@ -226,7 +149,7 @@ Product.create!(
     description: 'DIXIT是一款法国游戏，08年由法国游戏公司Libellud首先发行。这款游戏发行不久便备受瞩目。法国画家Marie Cardouat设计的卡牌画面精致可爱，规则简单却充满无限的乐趣。',
     price: 300,
     quantity: 5,
-    category_id: 1,
+#    category_id: 1,
     is_hidden: false
 #       image: open("https://ws2.sinaimg.cn/large/006tNbRwgy1fgat3ncl2lj30dv0dwna0.jpg"),
   )

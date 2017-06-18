@@ -52,22 +52,6 @@ ActiveRecord::Schema.define(version: 20170617093213) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "categories", force: :cascade do |t|
-    t.string   "title"
-    t.integer  "category_group_id"
-    t.boolean  "is_hidden",         default: false
-    t.datetime "created_at",                        null: false
-    t.datetime "updated_at",                        null: false
-  end
-
-  create_table "category_groups", force: :cascade do |t|
-    t.string   "title"
-    t.boolean  "is_hidden",  default: false
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
-    t.string   "image"
-  end
-
   create_table "currencies", force: :cascade do |t|
     t.string   "title"
     t.string   "symbol"
@@ -137,7 +121,6 @@ ActiveRecord::Schema.define(version: 20170617093213) do
     t.datetime "updated_at",                  null: false
     t.string   "image"
     t.boolean  "is_hidden",   default: false
-    t.integer  "category_id"
     t.boolean  "is_chosen",   default: false
     t.string   "friendly_id"
     t.index ["friendly_id"], name: "index_products_on_friendly_id", unique: true

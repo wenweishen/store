@@ -66,8 +66,8 @@ end
    end
 
    # 產品所属的分类
-   @categories = Category.all.map { |c| [c.title, c.id] }
-   @product.category_id = params[:category_id]
+   #@categories = Category.all.map { |c| [c.title, c.id] }
+  # @product.category_id = params[:category_id]
 
    if @product.update(product_params)
      redirect_to admin_products_path
