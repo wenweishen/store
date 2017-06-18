@@ -31,7 +31,7 @@ class Product < ApplicationRecord
 #  validates_format_of :friendly_id, :with => /\A[a-z0-9\-]\z/
 
   # 关联 #
-  belongs_to :category
+
   has_one :order_item
 
 

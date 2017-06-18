@@ -105,7 +105,7 @@
 
 
 
-  # 新增类型  Category #
+  # 新增类型  CategoryGroup#
     CategoryGroup.create!(
       title: '家人&朋友'
     )
