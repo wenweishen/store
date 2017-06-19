@@ -5,21 +5,13 @@ class ProductsController < ApplicationController
 
    def index
      # 商品类型
-     #@products = Product.all
+     @products = Product.all
 
-     # 判斷是否篩選分類
+     # 判断是否筛选分类
      if params[:category].present?
        @category_s = params[:category]
-       @category = Category.find_by(name: @category_s)
-
+       @category = Category.find_by(title: @category_s)
        @products = Product.where(:category => @category.id).published.recent.paginate(:page => params[:page], :per_page => 12)
-
-     # 判斷是否篩選類型
-     elsif params[:group].present?
-       @group_s = params[:group]
-
-       @products = Product.joins(:category).where("categories.category_group_id" => @group.id).published.recent.paginate(:page => params[:page], :per_page => 12)
-
 
      # 判斷是否選擇精選商品
      elsif params[:chosen].present?
@@ -30,6 +22,10 @@ class ProductsController < ApplicationController
        @products = Product.published.recent.paginate(:page => params[:page], :per_page => 12)
      end
    end
+
+
+
+
 
   def show
 
