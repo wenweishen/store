@@ -1,7 +1,8 @@
 class Admin::ProductsController < ApplicationController
+layout "admin" # 后台页面排版
 before_action :authenticate_user! # 使用者必須登入
 before_action :admin_required # 使用者必須是 admin 身份
-layout "admin" # 后台页面排版
+
 
 def index
  @products = Product.all.recent.paginate(:page => params[:page], :per_page => 10)
@@ -9,8 +10,10 @@ end
 
 def show
   @product = Product.find_by_friendly_id!(params[:id])
+
   # 商品图片
   @product_images = @product.product_images.all
+
 end
 
 def new
@@ -18,14 +21,13 @@ def new
   # 商品多图上传
   @product_image = @product.product_images.build
   # 商品所属的分类
-  #@categories = Category.all.order("category_group_id, title")
-  # @categories = Category.all.map { |c| [c.title, c.id] } #这一行为加入的代码
+  @categories = Category.all.map { |c| [c.title, c.id] } #这一行为加入的代码
 end
 
 
 def create
   @product = Product.new(product_params)
-
+  @product.category_id = params[:category_id]
   if @product.save!
     if params[:product_images] != nil
        params[:product_images]['image'].each do |i|
@@ -43,11 +45,12 @@ end
    @product = Product.find_by_friendly_id!(params[:id])
 
    # 商品所属的分类
-   #@categories = Category.all.map { |c| [c.title, c.id] } #这一行为加入的代码
+   @categories = Category.all.map { |c| [c.title, c.id] } #这一行为加入的代码
  end
 
  def update
    @product = Product.find_by_friendly_id!(params[:id])
+   @product.category_id = params[:category_id]
     # 商品图片
    if params[:product_images] != nil
      @product.product_images.destroy_all  #需要先删除旧图

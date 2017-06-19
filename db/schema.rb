@@ -10,34 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170617093213) do
-
-  create_table "article_collections", force: :cascade do |t|
-    t.integer  "article_id"
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "article_reviews", force: :cascade do |t|
-    t.text     "comment"
-    t.integer  "article_id"
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "articles", force: :cascade do |t|
-    t.string   "image"
-    t.string   "title"
-    t.text     "description"
-    t.integer  "user_id"
-    t.integer  "position"
-    t.boolean  "is_hidden",   default: true
-    t.text     "summary"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
-  end
+ActiveRecord::Schema.define(version: 20170619022444) do
 
   create_table "cart_items", force: :cascade do |t|
     t.integer  "cart_id"
@@ -48,6 +21,12 @@ ActiveRecord::Schema.define(version: 20170617093213) do
   end
 
   create_table "carts", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -123,6 +102,7 @@ ActiveRecord::Schema.define(version: 20170617093213) do
     t.boolean  "is_hidden",   default: false
     t.boolean  "is_chosen",   default: false
     t.string   "friendly_id"
+    t.integer  "category_id"
     t.index ["friendly_id"], name: "index_products_on_friendly_id", unique: true
   end
 

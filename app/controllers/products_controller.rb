@@ -17,7 +17,6 @@ class ProductsController < ApplicationController
      # 判斷是否篩選類型
      elsif params[:group].present?
        @group_s = params[:group]
-       @group = CategoryGroup.find_by(name: @group_s)
 
        @products = Product.joins(:category).where("categories.category_group_id" => @group.id).published.recent.paginate(:page => params[:page], :per_page => 12)
 

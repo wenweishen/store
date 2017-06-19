@@ -33,7 +33,7 @@ class Product < ApplicationRecord
   # 关联 #
 
   has_one :order_item
-
+  belongs_to :category
 
   has_many :product_images, dependent: :destroy # 多图上传 #
   accepts_nested_attributes_for :product_images # 多图上传 #

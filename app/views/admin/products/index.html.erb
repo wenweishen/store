@@ -16,7 +16,6 @@
     <tr>
       <th><%= t('f-product-name') %></th>
       <th><%= t('f-product-category') %></th>
-      <th><%= t('f-category-group') %></th>
       <th><%= t('f-product-price') %></th>
       <th><%= t('f-product-quantity') %></th>
       <th><%= t('f-options') %></th>
@@ -26,12 +25,15 @@
   <!--=== 商品列表內容 ===-->
   <% @products.each do |product| %>
     <tr>
-      <td><%= render_product_status(product) %>
+      <td>
+      <%= render_product_status(product) %>
       <%= link_to(product.title, admin_product_path(product)) %>
       <%= render_product_chosen_status(product) %>
       </td>
+      <td><%= product.category.title %></td>
       <td>$ <%= product.price %></td>
       <td><%= product.quantity %></td>
+
       <!--=== 操作選項 ===-->
       <td>
         <div class="action-box">

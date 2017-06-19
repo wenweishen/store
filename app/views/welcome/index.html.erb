@@ -51,87 +51,44 @@
   </div>
   </section>
 <!--===== 文章按钮区域 =====-->
-<section class="article-box">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-6">
-        <h3 class="titspan">文章</h3>
-      </div>
-      <div class="col-xs-6">
-        <%= link_to("more >", articles_path, class: "pull-right morespan") %>
-      </div>
+<!--===== 商品类型 =====-->
+<section class="categories-box">
+  <div class="row">
+    <div class="col-md-4 category-content">
+      <%= link_to 'heroku上对应的网址链接' , class: "category_1" do %>
+        <div class="category-box">
+          <%= image_tag("category_1.jpg") %>
+        </div>
+        <div>
+          <h3><%= t('th-first') %></h3>
+          <p><%= t('explain-first') %></p>
+        </div>
+      <% end %>
     </div>
-    <div class="row">
-      <% @articles.each do |article| %>
-        <div class="article-all col-md-6 container">
-          <div class="article-box row">
-            <!-- 文章列表图片 -->
-            <div class="col-md-5 all_image_css">
-              <% if article.image.present? %>
-                <%= link_to image_tag(article.image.articleimg.url, class: "product-list-style-img img-responsive"), article_path(article) %>
-              <% else %>
-                <%= link_to image_tag("http://placehold.it/600x400&text=No Pic", class: "product-list-style-img img-responsive"), article_path(article)%>
-              <% end %>
-            </div>
-            <!-- 文章列表标题、作者、日期 -->
-            <div class="col-md-7">
-              <%= link_to(article.title, article_path(article), class: "article-index-title") %>
-              <div class="article-user row">
-                <div class="col-md-6">
-                  <span> <%= article.user.display_name %></span>
-                </div>
-                <div class="col-md-6">
-                  <span> <%= article.created_at.strftime("%Y-%m-%d %H:%M:%S") %></span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <hr>
+    <div class="col-md-4 category-content">
+      <%= link_to 'heroku上对应的网址链接' , class: "category_2" do %>
+        <div class="category-box">
+         <%= image_tag("category_2.jpg") %>
+        </div>
+        <div>
+          <h3><%= t('th-second') %></h3>
+          <p><%= t('explain-second') %></p>
+        </div>
+      <% end %>
+    </div>
+    <div class="col-md-4 category-content">
+      <%= link_to 'heroku上对应的网址链接' , class: "category_3" do %>
+        <div class="category-box">
+          <%= image_tag("category_3.jpg") %>
+        </div>
+        <div>
+          <h3><%= t('th-third') %></h3>
+          <p><%= t('explain-third') %></p>
         </div>
       <% end %>
     </div>
   </div>
 </section>
-
-
-  <!--===== 商品类型 =====-->
-  <section class="categories-box">
-    <div class="row">
-      <div class="col-md-4 category-content">
-        <%= link_to 'heroku上对应的网址链接' , class: "category_1" do %>
-          <div class="category-box">
-            <%= image_tag("category_1.jpg") %>
-          </div>
-          <div>
-            <h3><%= t('th-first') %></h3>
-            <p><%= t('explain-first') %></p>
-          </div>
-        <% end %>
-      </div>
-      <div class="col-md-4 category-content">
-        <%= link_to 'heroku上对应的网址链接' , class: "category_2" do %>
-          <div class="category-box">
-           <%= image_tag("category_2.jpg") %>
-          </div>
-          <div>
-            <h3><%= t('th-second') %></h3>
-            <p><%= t('explain-second') %></p>
-          </div>
-        <% end %>
-      </div>
-      <div class="col-md-4 category-content">
-        <%= link_to 'heroku上对应的网址链接' , class: "category_3" do %>
-          <div class="category-box">
-            <%= image_tag("category_3.jpg") %>
-          </div>
-          <div>
-            <h3><%= t('th-third') %></h3>
-            <p><%= t('explain-third') %></p>
-          </div>
-        <% end %>
-      </div>
-    </div>
-  </section>
 
   <!--===== 立即購買 =====-->
   <section class="push-box">

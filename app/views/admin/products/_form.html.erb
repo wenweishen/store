@@ -19,7 +19,7 @@
     <!-- 商品名稱 -->
     <%= f.input :title, :label => t('f-product-name'), input_html: { class: 'width-50' } %>
     <!-- 選擇分類 -->
-    
+    <%= select_tag(:category_id, options_for_select(@categories), :prompt => "Category") %>
     <!-- 商品敘述 -->
     <%= f.input :description, :label => t('f-product-description'), input_html: { class: 'height-200' } %>
     <!-- 商品售價 -->
