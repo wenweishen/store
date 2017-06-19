@@ -186,7 +186,7 @@ zh-CN:
   # 后台操作面板 #
   admin-order: 订单管理
   admin-product: 商品管理
-  admin-brand: 品牌管理
+#  admin-brand: 品牌管理
   admin-category: 分类管理
   admin-homepage: 首页广告管理
 

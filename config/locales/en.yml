@@ -184,10 +184,10 @@ en:
   products_center: products_center
 
   # 后台操作面板 #
-  admin-order: 订单管理
-  admin-product: 商品管理
-  admin-brand: 品牌管理
-  admin-category: 分类管理
+  admin-order: admin-order
+  admin-product: admin-product
+#  admin-brand: 品牌管理
+  admin-category: admin-category
   admin-homepage: 首页广告管理
 
 #--=== 使用者专区 ===--#
