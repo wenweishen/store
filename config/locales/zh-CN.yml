@@ -273,16 +273,6 @@ zh-CN:
   cancelled: 此笔订单已取消
   returned: 此笔购买已退货
 
-  # 类型管理 #
-  category-group-index: 类型一览
-  category-group-new: 新增类型
-  category-group-edit: 编辑类型
-
-  f-category-group-name: 类型名称
-  f-category-group-categories: 类型分类一览
-
-  btn-category-group-new: 新增类型
-
   # 分类管理 #
   category-index: 分类一览
   category-new: 新增分类

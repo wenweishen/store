@@ -184,10 +184,10 @@ en:
   products_center: products_center
 
   # 后台操作面板 #
-  admin-order: admin-order
-  admin-product: admin-product
+  admin-order: Orders
+  admin-product: Products
 #  admin-brand: 品牌管理
-  admin-category: admin-category
+  admin-category: Categories
   admin-homepage: 首页广告管理
 
 #--=== 使用者专区 ===--#
@@ -272,16 +272,6 @@ en:
 
   cancelled: 此笔订单已取消
   returned: 此笔购买已退货
-
-  # 类型管理 #
-  category-group-index: 类型一览
-  category-group-new: 新增类型
-  category-group-edit: 编辑类型
-
-  f-category-group-name: 类型名称
-  f-category-group-categories: 类型分类一览
-
-  btn-category-group-new: 新增类型
 
   # 分类管理 #
   category-index: 分类一览
