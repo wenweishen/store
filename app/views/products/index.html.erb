@@ -1,19 +1,14 @@
 <div class="product-box">
   <div class="container">
-    <br>
-    <hr>
-    <br>
-    <hr>
-    <br>
     <!--=== 商品類型 Banner ===-->
-    <!--=== 商品类型 & 品牌选单 ===-->
+    <%= render "products/menu" %>
+
     <% if @products.length > 0 %>
       <!--=== 商品列表 ===-->
       <div class='row'>
         <% @products.each_with_index do |product, index| %>
-          <div class='col-xs-12 col-sm-4 col-md-3 product-content'>
+          <div class='col-xs-10 col-sm-4 col-md-3 product-content'>
             <%= link_to product_path(product) do %>
-
               <!-- 商品图片 -->
               <% if product.product_images.present? %>
                 <!-- 显示第一张图片 -->
@@ -21,16 +16,16 @@
                 <!-- 产品是否精选 -->
                 <% if product.is_chosen %>
                   <div class="chosen-box">
-                  <%= t('product-chosen') %>
-                </div>
+                    <%= t('product-chosen') %>
+                  </div>
                 <% end %>
 
                 <%= image_tag(product.product_images[0].image.thumb.url, class: 'thumbnail')%>
-
               <% else %>
                 <%= image_tag('http://placehold.it/200x200&text=No Pic', class: 'thumbnail') %>
               <% end %>
             <% end %>
+
             <!-- 商品信息 -->
             <div class="product-info">
               <p><%= link_to(product.title, product_path(product)) %></p>
@@ -42,12 +37,16 @@
       </div>
     <% else %>
       <div class="product-content">
-        <h2><%= (t('no-product-data')) %></h2>
+        <h2><%= t('no-product-data') %></h2>
       </div>
     <% end %>
+
+
     <hr>
+    <!-- 翻页栏 -->
     <div class="page-box">
       <%= will_paginate @products, renderer: BootstrapPagination::Rails, :previous_label => t('previous-label'), :next_label => t('next-label') %>
     </div>
+
   </div>
 </div>

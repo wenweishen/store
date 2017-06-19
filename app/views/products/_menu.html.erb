@@ -1,54 +1,43 @@
-<!--=== 商品類型 & 品牌選單 ===-->
-<div class="btn-group">
+<hr/>
 
-  <!--=== 精選商品 ===-->
+<!--=== 精選商品 ===-->
+<div class='dropdown btn-group clearfix'>
+  <%= link_to products_path(:chosen => 'y'), class: 'btn' do %>
+    <%= t('f-product-chosen') %> #
+  <% end %>
+</div>
+
+<!--=== 類型選單 ===-->
+<% @category.each do |category| %>
+
   <div class='dropdown btn-group clearfix'>
-    <%= link_to products_path(:chosen => 'y'), class: 'btn' do %>
-      <%= t('f-product-chosen') %>
-    <% end %>
+    <button class='btn dropdown-toggle' type='button' data-toggle='dropdown'>
+      <%= category.title %>
+      <i class="fa fa-angle-down"></i>
+    </button>
+
+    <!-- 選項：列出該類型所有分類 -->
+    <ul class='dropdown-menu'>
+      <% categories.each do |category| %>
+        <li>
+          <%= link_to(category.title, products_path(:category => category.title)) %>
+        </li>
+      <% end %>
+    </ul>
+
   </div>
 
-  <!--=== 類型選單 ===-->
-  <% @category_groups.each do |category_group| %>
+<% end %>
 
-    <div class='dropdown btn-group clearfix'>
-      <button class='btn dropdown-toggle' type='button' data-toggle='dropdown'>
-        <%= category_group.title %> <i class="fa fa-angle-down"></i>
-      </button>
-
-      <!-- 選項：列出該類型所有分類 -->
-      <ul class='dropdown-menu'>
-        <% category_group.categories.each do |category| %>
-          <li>
-            <%= link_to(category.title, products_path(:category => category.title)) %>
-          </li>
-        <% end %>
-      </ul>
-    </div>    
-  <% end %>
-
-  <!--=== 品牌選單 ===-->
-</div>
-<hr/>
 
 <div class="path-box">
   <!--=== 產品頁面路徑 ===-->
   <div class="left-box">
-    <%= link_to products_path do %>
-      <%= (t('j-and-a-select')) %>
-    <% end %>
+      <a href="#pg" style= "color:white">全部商品</a>
+      <a href="#cp" style= "color:white"><%= t('th-first')%></a>
+      <a href="#cl" style= "color:white"><%= t('th-second') %></a>
+      <a href="#gj" style= "color:white"><%= t('th-third') %></a>
 
-    <% if params[:id].present? %>
-    / <a href="../products?group=<%= @product.category.category_group.title %>"><%= @product.category.category_group.title %></a> / <a href="../products?category=<%= @product.category.title %>"><%= @product.category.title %></a> / <a href="<%= @product.id %>"><%= @product.title %></a>
-    <% elsif params[:category].present? %>
-    / <a href="products?group=<%= @category.category_group.title %>"><%= @category.category_group.title %></a> / <a href="products?category=<%= @category.title %>"><%= @category.title %></a>
-    <% elsif params[:group].present? %>
-    / <a href="products?group=<%= @group.title %>"><%= @group.title %></a>
-    <% elsif params[:brand].present? %>
-    / <a href="products?brand=<%= @brand.title %>"><%= @brand.title %></a>
-    <% elsif params[:chosen].present? %>
-    / <a href="products?chosen=y"><%= t('f-product-chosen') %></a>
-    <% end %>
   </div>
 
   <!-- 只在 Products#index 和 products/search 兩個頁面顯示 -->
@@ -65,16 +54,21 @@
           <%= t('order-btn-title') %> <span class="caret"></span>
         </button>
       <% end %>
-
       <!-- 選項：列出排序方式 -->
       <ul class="dropdown-menu dropdown-menu-right" selection aria-labelledby="dropdownMenuDivider">
         <li><%= link_to(t('order-btn-hot'), '#') %></li>
         <li><%= link_to(t('order-btn-recent'), '#') %></li>
         <li><%= link_to(t('order-btn-price-l'), '#') %></li>
         <li><%= link_to(t('order-btn-price-h'), '#') %></li>
+        <li><%= link_to("价格从高到低", products_path(:order => "down_product.price"), :style => "color:#996247")  %></li>
+        <li><%= link_to("价格从低到高", products_path(:order => "up_product.price"), :style => "color:#996247") %></li>
+        <li><%= link_to("发表时间", products_path, :style => "color:#996247" ) %></li>
       </ul>
     </div>
   </div>
   <% end %>
+
 </div>
+
+
 <hr/>
