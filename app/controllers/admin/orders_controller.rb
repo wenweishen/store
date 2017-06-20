@@ -1,6 +1,5 @@
 class Admin::OrdersController < ApplicationController
  layout "admin" # 后台页面排版
-
  before_action :authenticate_user!
  before_action :admin_required
 

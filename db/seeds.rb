@@ -105,15 +105,15 @@ puts '创建广告*4'
 
 # 新增类型  Category#
 Category.create!(
-  title: '家人&朋友'
+  title: '家人朋友'
 )
 
 Category.create!(
-  title: '同学&同事'
+  title: '同学同事'
 )
 
 Category.create!(
-  title: '公司文化&同行交流'
+  title: '公司文化'
 )
 
 puts '创建类型*3：家人&朋友、同学&同事、公司文化&同行交流'

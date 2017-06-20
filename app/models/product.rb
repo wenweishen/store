@@ -19,16 +19,17 @@ class Product < ApplicationRecord
 
   # 新增/修改栏位限制与提示 #
   validates :title, presence: { message: "请输入商品名称" }
+  validates :category_id, presence: { message: "请选择商品分类" }
   validates :price, presence: { message: "请输入商品售价" }
   validates :price, numericality: { greater_than: 0, message: "请输入商品售价，必须大于零" }
   validates :quantity, presence: { message: "请输入库存数量" }, numericality: { greater_than_or_equal: 0 }
-#  validates :category_id, presence: { message: "请选择商品分类" }
+
 
   #Product 改成可以自订 Model 网址
   before_validation :generate_friendly_id, :on => :create
-#  validates_presence_of :title, :friendly_id
-#  validates_uniqueness_of :friendly_id
-#  validates_format_of :friendly_id, :with => /\A[a-z0-9\-]\z/
+  validates_presence_of :title, :friendly_id
+  validates_uniqueness_of :friendly_id
+  validates_format_of :friendly_id, :with => /\A[a-z0-9\-]\z/
 
   # 关联 #
 
